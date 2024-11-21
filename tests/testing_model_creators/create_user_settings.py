@@ -12,6 +12,7 @@ def create_user_settings(
     duplicate_suffix_template: Optional[str] = None,
 ) -> UserSettings:
     user_settings_dict: dict[Any, Any] = {
+        "version": "0.0.1",
         "rename_rules": [
             {
                 "template_file_dir": template_file_dir or generic.path.project_dir(),
@@ -24,7 +25,7 @@ def create_user_settings(
                     }
                 },
             }
-        ]
+        ],
     }
 
     # For any none values, remove them so that the model uses its own defaults

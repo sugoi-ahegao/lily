@@ -15,9 +15,13 @@ def create_scene(
     performers: Optional[list[Performer]] = None,
     rating100: Optional[int] = None,
     o_counter: Optional[int] = None,
+    stash_ids: Optional[list[dict[str, str]]] = None,
 ) -> Scene:
     if organized is None:
         organized = generic.random.choice([True, False])
+
+    if stash_ids is None:
+        stash_ids = []
 
     return Scene.model_validate(
         {
@@ -30,6 +34,7 @@ def create_scene(
             "o_counter": o_counter,
             "created_at": generic.datetime.datetime(),
             "updated_at": generic.datetime.datetime(),
+            "stash_ids": stash_ids,
             "files": [],
             "studio": studio,
             "tags": [],

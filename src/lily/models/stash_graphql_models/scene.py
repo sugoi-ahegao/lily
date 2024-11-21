@@ -8,6 +8,11 @@ from lily.models.stash_graphql_models.tag import PartialTag
 from lily.models.stash_graphql_models.video_file import VideoFile
 
 
+class StashID(BaseModelWithExactAttributes):
+    stash_id: str
+    endpoint: str
+
+
 class Scene(BaseModelWithExactAttributes):
     id: int
     title: Optional[str]
@@ -18,6 +23,7 @@ class Scene(BaseModelWithExactAttributes):
     o_counter: Optional[int]
     created_at: datetime.datetime
     updated_at: datetime.datetime
+    stash_ids: list[StashID]
     files: list[VideoFile]
     studio: Optional[Studio]
     tags: list[PartialTag]
@@ -35,6 +41,10 @@ fragment SceneFragment on Scene {
     o_counter
     created_at
     updated_at
+    stash_ids {
+        stash_id
+        endpoint
+    }
     files {
         ...VideoFileFragment
     }

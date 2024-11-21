@@ -16,6 +16,7 @@ rename_rules:
 
     filters:
       matches_organized_value: true
+      matches_has_stash_id: true
 
     field_settings:
       performers:

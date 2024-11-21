@@ -66,3 +66,13 @@ def test_scene_passes_studio_filter_with_include_sub_studios():
         create_stash_context(scene=scene, studios=studios),
         FilterSettings(matches_studio=MatchesStudioFilterSettings(id=random_studio.id, include_sub_studios=True)),
     )
+
+
+def test_matches_has_stash_id_filter():
+    stash_ids = [{"stash_id": "some-stash-id", "endpoint": "some-endpoint"}]
+
+    ctx = create_stash_context(scene=create_scene(stash_ids=stash_ids))
+    assert passes_all_filters(ctx, FilterSettings(matches_has_stash_id=True)) is True
+
+    ctx = create_stash_context(scene=create_scene(stash_ids=[]))
+    assert passes_all_filters(ctx, FilterSettings(matches_has_stash_id=True)) is False
