@@ -53,12 +53,12 @@ class LilyResults:
         if config.allow_rename_across_drives:
             cls.cross_drive_conflict_counter.disable("Renaming across drives is allowed")
 
-        if config.dry_run_enabled:
-            cls.renamed_counter.disable("Dry-Run mode is enabled")
-            cls.rename_failed_counter.disable("Dry-Run mode is disabled, no rename failures possible")
-
-        if not config.dry_run_enabled:
+        if config.dry_run_disabled:
             cls.dry_run_renamed_counter.disable("Dry-Run mode is disabled")
+
+        if not config.dry_run_disabled:
+            cls.renamed_counter.disable("Dry-Run mode is enabled")
+            cls.rename_failed_counter.disable("Dry-Run mode is enabled, no rename failures possible")
 
     @classmethod
     def get_results(cls):

@@ -29,7 +29,7 @@ def rename_video_file(
             LilyResults.cross_drive_conflict_counter.inc()
             return
 
-    if stash_plugin_config.dry_run_enabled:
+    if not stash_plugin_config.dry_run_disabled:
         rename_message = f"[DRY-RUN RENAME] '{src_path.resolve()}' --> '{dst_path.resolve()}'"
         stash_logger.info(rename_message)
         logger.info(rename_message)

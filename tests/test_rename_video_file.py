@@ -15,7 +15,7 @@ def test_file_is_not_renamed_if_dry_run_is_enabled():
     mock_stash_graphql = create_autospec(StashGraphQL, instance=True)
 
     stash_plugin_config = StashPluginConfig(
-        dry_run_enabled=True,
+        dry_run_disabled=False,
         # Configuration of "allow rename across drives" should not matter
         allow_rename_across_drives=generic.random.choice([True, False]),
     )
@@ -37,7 +37,7 @@ def test_file_in_different_drive_is_not_renamed_if_renames_across_drives_are_dis
 
     stash_plugin_config = StashPluginConfig(
         # Configuration of "dry run" should not matter
-        dry_run_enabled=generic.random.choice([True, False]),
+        dry_run_disabled=generic.random.choice([True, False]),
         allow_rename_across_drives=False,
     )
 
@@ -58,7 +58,7 @@ def test_file_is_renamed():
     destination_path = Path("O:/path/to/file.mp4")  # Different drive
     mock_stash_graphql = create_autospec(StashGraphQL, instance=True)
 
-    stash_plugin_config = StashPluginConfig(dry_run_enabled=False, allow_rename_across_drives=True)
+    stash_plugin_config = StashPluginConfig(dry_run_disabled=True, allow_rename_across_drives=True)
     rename_video_file(
         stash_context=stash_ctx,
         dst_path=destination_path,
