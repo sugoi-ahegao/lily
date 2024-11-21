@@ -1,45 +1,24 @@
-from lily.filters.matches_any_source_dirs import matches_any_source_dir
-from lily.filters.matches_any_studio import matches_any_studio
-from lily.filters.matches_has_stash_id import matches_has_stash_id
-from lily.filters.matches_organized_value import matches_organized_value
-from lily.filters.matches_source_dir import matches_source_dir
-from lily.filters.matches_studio import matches_studio
 from lily.lily_logging.lily_logger import get_lily_logger
-from lily.models.user_settings.filter_settings import FilterSettings
+from lily.models.user_settings.filter_settings import FilterSettings, filter_registry
 from lily.stash_context import StashContext
 
 
 def passes_all_filters(stash_context: StashContext, filter_settings: FilterSettings) -> bool:
     logger = get_lily_logger()
 
-    if filter_settings.matches_organized_value is not None:
-        if not matches_organized_value(stash_context, filter_settings.matches_organized_value):
-            logger.debug("Failed Filter: matches_organized_value")
-            return False
+    for filter_name, filter_setting in filter_settings:
+        # This should never happen, every filter name should have a corresponding filter function
+        if filter_name not in filter_registry:
+            raise ValueError(f"Filter was not found in filter registry: '{filter_name}'")
 
-    if filter_settings.matches_studio is not None:
-        if not matches_studio(stash_context, filter_settings.matches_studio):
-            logger.debug("Failed Filter: matches_studio")
-            return False
+        # If filter is not set, skip
+        if filter_setting is None:
+            continue
 
-    if filter_settings.matches_any_studio is not None:
-        if not matches_any_studio(stash_context, filter_settings.matches_any_studio):
-            logger.debug("Failed Filter: matches_any_studio")
-            return False
+        filter_function = filter_registry[filter_name]
 
-    if filter_settings.matches_source_dir is not None:
-        if not matches_source_dir(stash_context, filter_settings.matches_source_dir):
-            logger.debug("Failed Filter: matches_source_dir")
-            return False
-
-    if filter_settings.matches_any_source_dir is not None:
-        if not matches_any_source_dir(stash_context, filter_settings.matches_any_source_dir):
-            logger.debug("Failed Filter: matches_any_source_dir")
-            return False
-
-    if filter_settings.matches_has_stash_id is not None:
-        if not matches_has_stash_id(stash_context, filter_settings.matches_has_stash_id):
-            logger.debug("Failed Filter: matches_has_stash_id")
+        if not filter_function(stash_context, filter_setting):
+            logger.debug(f"Failed Filter: {filter_name}")
             return False
 
     return True
