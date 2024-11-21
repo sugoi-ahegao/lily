@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from lily.lily_logging.lily_logger import get_lily_logger
+from lily.lily_logging.lily_logger import get_lily_dry_run_logger, get_lily_logger, get_lily_rename_logger
 from lily.lily_logging.stash_logger import get_stash_logger
 from lily.lily_results import LilyResults
 from lily.models.stash_graphql_models.stash_plugin_config import StashPluginConfig
@@ -15,6 +15,8 @@ def rename_video_file(
     stash_context: StashContext, dst_path: Path, stash_plugin_config: StashPluginConfig, stash_graphql: StashGraphQL
 ):
     logger = get_lily_logger()
+    rename_logger = get_lily_rename_logger()
+    dry_run_logger = get_lily_dry_run_logger()
     stash_logger = get_stash_logger()
 
     logger.info(f'Final Destination Path: "{dst_path}"')
@@ -32,7 +34,7 @@ def rename_video_file(
     if not stash_plugin_config.dry_run_disabled:
         rename_message = f"[DRY-RUN RENAME] '{src_path.resolve()}' --> '{dst_path.resolve()}'"
         stash_logger.info(rename_message)
-        logger.info(rename_message)
+        dry_run_logger.info(rename_message)
         LilyResults.dry_run_renamed_counter.inc()
         return
 
@@ -40,7 +42,7 @@ def rename_video_file(
         stash_graphql.move_file(stash_context.video_file.id, dst_path)
         rename_message = f"[RENAMED] '{src_path.resolve()}' --> '{dst_path.resolve()}'"
         stash_logger.info(rename_message)
-        logger.info(rename_message)
+        rename_logger.info(rename_message)
         LilyResults.renamed_counter.inc()
 
     except Exception:

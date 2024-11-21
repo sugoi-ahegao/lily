@@ -27,3 +27,15 @@ def get_lily_logger():
     assert logging_setup_complete, "Logging must be configured before calling getting lily logger!"
 
     return LilyLoggerAdapter(logging.getLogger("lily"))
+
+
+def get_lily_rename_logger():
+    assert logging_setup_complete, "Logging must be configured before calling getting rename logger!"
+
+    return LilyLoggerAdapter(logging.getLogger("rename"))
+
+
+def get_lily_dry_run_logger():
+    assert logging_setup_complete, "Logging must be configured before calling getting dry-run logger!"
+
+    return LilyLoggerAdapter(logging.getLogger("dry-run"))

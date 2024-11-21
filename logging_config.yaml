@@ -11,7 +11,30 @@ handlers:
     filename: "${plugin_dir}\\logs\\lily.log" # NOTE: Ensure the logs folder exists
     encoding: "utf-8"
     mode: "a"
+  rename_log_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: simple
+    filename: "${plugin_dir}\\logs\\lily.rename.log" # NOTE: Ensure the logs folder exists
+    encoding: "utf-8"
+    mode: "a"
+  dry_run_log_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: simple
+    filename: "${plugin_dir}\\logs\\lily.dry-run.log" # NOTE: Ensure the logs folder exists
+    encoding: "utf-8"
+    mode: "a"
 root:
   level: DEBUG
   handlers:
     - file
+loggers:
+  rename:
+    level: INFO
+    handlers:
+      - rename_log_file
+  dry-run:
+    level: INFO
+    handlers:
+      - dry_run_log_file
