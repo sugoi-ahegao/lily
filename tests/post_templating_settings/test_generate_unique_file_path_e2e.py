@@ -65,3 +65,31 @@ def test_file_path_is_not_renamed_if_new_file_path_is_same_as_existing_file_path
             actual_file_path = process_video_file(stash_context, user_settings)
 
             assert actual_file_path is None
+
+
+def test_file_path_is_not_renamed_if_new_file_path_is_same_as_existing_file_path_with_suffix():
+    expected_file_path = Path("/[VIDEOS]/Scene Video (1).mp4")
+
+    # Set the generate_file_dir and generate_file_name functions to return the expected file path
+    generate_file_dir_return_value = Path("/[VIDEOS]")
+    generate_file_name_return_value = Path("Scene Video")
+    # Set duplication suffix such that it generates suffixes that are the same as the expected file path
+    duplicate_suffix_template = " (${num})"
+
+    # Create a video file with the expected file path
+    video_file = create_video_file(file_path=expected_file_path)
+
+    stash_context = create_stash_context(scene=create_scene(), video_file=video_file)
+    user_settings = create_user_settings(duplicate_suffix_template=duplicate_suffix_template)
+
+    with patch("lily.process_video_file.generate_file_dir") as mock_generate_file_dir:
+        with patch("lily.process_video_file.generate_file_name") as mock_generate_file_name:
+            # Force file_exists to return True so that no file path is unique
+            with patch_file_exists(True):
+                # Mock the generate_file_dir and generate_file_name functions to return the expected file path
+                mock_generate_file_dir.return_value = generate_file_dir_return_value
+                mock_generate_file_name.return_value = generate_file_name_return_value
+
+                actual_file_path = process_video_file(stash_context, user_settings)
+
+                assert actual_file_path is None

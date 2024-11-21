@@ -51,12 +51,11 @@ def process_video_file(stash_context: StashContext, user_settings: UserSettings)
         new_file_dir = generate_file_dir(selected_rule.template_file_dir, stash_context, selected_rule.field_settings)
         new_file_path = Path(new_file_dir, f"{new_file_name}{file_ext}")
 
-        # If the new path is the same as the original file path, then no need to generate a unique file path
-        # Otherwise, if the new path is not the same as the original file path, then ensure the new file path is unique
-        if not are_paths_equal(stash_context.video_file.path, new_file_path):
-            new_file_path = generate_unique_file_path(
-                new_file_path, selected_rule.post_templating_settings.path.duplicate_suffix_template
-            )
+        new_file_path = generate_unique_file_path(
+            source_file_path=stash_context.video_file.path,
+            templated_file_path=new_file_path,
+            duplicate_file_suffix=selected_rule.post_templating_settings.path.duplicate_suffix_template,
+        )
 
         if not exceeds_max_path_length(new_file_path, max_path_length):
             break
@@ -89,21 +88,29 @@ def remove_fields_from_template(template_str: str, fields_to_remove: list[str]) 
     return template_str
 
 
-def generate_unique_file_path(file_path: Path, duplicate_file_suffix: str) -> Path:
+def generate_unique_file_path(source_file_path: Path, templated_file_path: Path, duplicate_file_suffix: str) -> Path:
     validate_template_identifiers(duplicate_file_suffix, ["num"])
 
-    # If file does not exist, then it is unique
-    if not file_exists(file_path):
-        return file_path
+    # If the source file path is the same as the templated file path,
+    # then the path is already unique, so there is no need to generate a unique file path
+    if are_paths_equal(source_file_path, templated_file_path):
+        return source_file_path
 
-    new_file_path = file_path
+    if not file_exists(templated_file_path):
+        return templated_file_path
 
     max_attempts = 10
     for i in range(1, max_attempts + 1):
         suffix = Template(duplicate_file_suffix).substitute(num=i)
-        new_file_path = new_file_path.with_stem(f"{file_path.stem}{suffix}")
+        templated_file_path_with_suffix = templated_file_path.with_stem(f"{templated_file_path.stem}{suffix}")
 
-        if not file_exists(new_file_path):
-            return new_file_path
+        # If the source file path is the same as the templated file path with suffix,
+        # then the path is unique
+        if are_paths_equal(source_file_path, templated_file_path_with_suffix):
+            return source_file_path
 
-    raise RuntimeError(f"Failed to generate unique file path after {max_attempts} attempts: {file_path}")
+        # If the templated file path with a new suffix does not exist, then the path is unique
+        if not file_exists(templated_file_path_with_suffix):
+            return templated_file_path_with_suffix
+
+    raise RuntimeError(f"Failed to generate unique file path after {max_attempts} attempts: {source_file_path}")
