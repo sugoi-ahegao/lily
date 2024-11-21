@@ -1,0 +1,17 @@
+version: 1
+disable_existing_loggers: true
+formatters:
+  simple:
+    format: "[%(asctime)s] %(levelname)-8s %(message)s"
+handlers:
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: simple
+    filename: "${plugin_dir}\\logs\\lily.log" # NOTE: Ensure the logs folder exists
+    encoding: "utf-8"
+    mode: "a"
+root:
+  level: DEBUG
+  handlers:
+    - file

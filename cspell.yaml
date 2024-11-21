@@ -1,0 +1,30 @@
+version: "0.2"
+ignorePaths:
+  - .gitignore
+dictionaryDefinitions:
+  - name: pornstars
+    path: ./.cspell/pornstar-dictionary.txt
+    addWords: true
+dictionaries:
+  - en_US
+  - companies
+  - softwareTerms
+  - misc
+  - python
+  - bash
+  - pornstars
+words:
+  - appendleft
+  - asctime
+  - autouse
+  - levelname
+  - pydantic
+  - pythonpath
+  - renamer
+  - testpaths
+  - unidecode
+ignoreWords:
+  - charliermarsh
+import: []
+language: en
+enabled: true

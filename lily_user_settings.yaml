@@ -1,0 +1,24 @@
+version: 0.0.1
+global_rule_settings:
+  field_settings:
+    date:
+      format: "%Y-%m-%d"
+
+  post_templating_settings:
+    path:
+      max_path_length: 250
+      duplicate_suffix_template: " (${num})"
+
+rename_rules:
+  - name: "Rename organized videos"
+    template_file_dir: "${source_video_dir}"
+    template_file_name: "${studio} ${date} ${title} -- ${performers} (${resolution})"
+
+    filters:
+      matches_organized_value: true
+
+    field_settings:
+      performers:
+        separator: ", "
+        limit: 3
+        exclude_genders: ["MALE"]

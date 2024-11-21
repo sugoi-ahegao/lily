@@ -1,0 +1,28 @@
+name: Lily
+description: Lily is a file renamer for StashDB
+version: 0.0.1
+exec:
+  - python
+  - "{pluginDir}/src/main.py"
+  - "--user-settings-path={pluginDir}/lily_user_settings.yaml"
+  - "--plugin-dir={pluginDir}"
+  - "--logging-config-file-path={pluginDir}/logging_config.yaml"
+tasks:
+  - name: Run On All Scenes
+    description: Run Lily on all scenes
+    defaultArgs:
+      mode: "all-scenes"
+hooks:
+  - name: Lily Scene Update Hook
+    description: Run Lily on Scene Update
+    triggeredBy:
+      - Scene.Update.Post
+settings:
+  dry_run_enabled:
+    displayName: Enable Dry-Run
+    description: If enabled, only perform dry-run and don't actually rename files
+    type: BOOLEAN
+  allow_rename_across_drives:
+    displayName: Allow Rename Across Different Drives
+    description: If enabled, allow renaming files across different drives (could take a long time)
+    type: BOOLEAN
