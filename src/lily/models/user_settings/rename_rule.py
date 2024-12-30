@@ -2,7 +2,7 @@ from typing import Optional
 
 from lily.models.core import BaseModelWithExactAttributes
 from lily.models.user_settings.field_settings import FieldSettings
-from lily.models.user_settings.filter_settings import FilterSettings
+from lily.filters.filter_settings import FilterSettings
 from lily.models.user_settings.post_templating_settings import PostTemplatingSettings
 
 

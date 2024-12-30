@@ -9,7 +9,7 @@ from lily.lily_logging.lily_logger import get_lily_logger
 from lily.lily_logging.lily_logger_adapter import LilyLoggerAdapter
 from lily.lily_results import LilyResults
 from lily.models.user_settings.user_settings import UserSettings
-from lily.passes_all_filters import passes_all_filters
+from lily.filters.passes_all_filters import passes_all_filters
 from lily.stash_context import StashContext
 from lily.utils.path_utils import are_paths_equal, file_exists
 

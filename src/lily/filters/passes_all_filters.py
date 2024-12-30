@@ -1,5 +1,5 @@
 from lily.lily_logging.lily_logger import get_lily_logger
-from lily.models.user_settings.filter_settings import FilterSettings, filter_registry
+from lily.filters.filter_settings import FilterSettings, filter_registry
 from lily.stash_context import StashContext
 
 

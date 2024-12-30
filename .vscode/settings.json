@@ -14,5 +14,6 @@
   "python.analysis.inlayHints.pytestParameters": true,
   "files.exclude": {
     "**/__pycache__": true
-  }
+  },
+  "python.analysis.autoImportCompletions": true
 }
