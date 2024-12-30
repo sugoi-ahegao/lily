@@ -15,8 +15,8 @@ from lily.models.user_settings.field_settings import FieldSettings
 from lily.stash_context import StashContext
 
 
-def generate_file_dir(template_file_path: str, run_context: StashContext, field_settings: FieldSettings) -> str:
-    ctx = run_context
+def generate_file_dir(template_file_path: str, stash_context: StashContext, field_settings: FieldSettings) -> str:
+    ctx = stash_context
 
     new_file_dir = (
         Template(template_file_path)
@@ -49,8 +49,8 @@ def generate_file_dir(template_file_path: str, run_context: StashContext, field_
     return new_file_dir
 
 
-def generate_file_name(template_file_name: str, run_context: StashContext, field_settings: FieldSettings):
-    ctx = run_context
+def generate_file_name(template_file_name: str, stash_context: StashContext, field_settings: FieldSettings):
+    ctx = stash_context
 
     new_file_name = (
         Template(template_file_name)

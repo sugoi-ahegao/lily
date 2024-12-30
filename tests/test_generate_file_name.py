@@ -32,7 +32,7 @@ def test_generate_file_name_with_title_and_date():
     assert expected == actual
 
 
-def test_generate_file_name_with_run_context():
+def test_generate_file_name_with_stash_context():
     performers = [create_performer(), create_performer()]
     scene = create_scene(title="scene title", performers=performers)
 

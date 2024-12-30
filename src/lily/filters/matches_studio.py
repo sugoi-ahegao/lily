@@ -11,11 +11,11 @@ class MatchesStudioFilterSettings(BaseModelWithExactAttributes):
     include_sub_studios: bool = False
 
 
-def matches_studio(run_context: StashContext, matches_studio_filter: MatchesStudioFilterSettings) -> bool:
-    if run_context.scene.studio is None:
+def matches_studio(stash_context: StashContext, matches_studio_filter: MatchesStudioFilterSettings) -> bool:
+    if stash_context.scene.studio is None:
         return False
 
-    scene_studio = run_context.scene.studio
+    scene_studio = stash_context.scene.studio
 
     if matches_studio_filter.name is not None:
         if matches_studio_filter.name == scene_studio.name:
@@ -26,7 +26,7 @@ def matches_studio(run_context: StashContext, matches_studio_filter: MatchesStud
             return True
 
     if matches_studio_filter.include_sub_studios:
-        hierarchy = create_studio_hierarchy(scene_studio, run_context.studios)
+        hierarchy = create_studio_hierarchy(scene_studio, stash_context.studios)
 
         for studio in hierarchy:
             if matches_studio_filter.name is not None:
