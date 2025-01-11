@@ -46,7 +46,7 @@ def main(args: PluginArgs):
     scenes = fetch_scenes(plugin_input_dict, stash_graphql)
 
     if len(scenes) == 0:
-        raise RuntimeError("No scenes found")
+        return
 
     studios = stash_graphql.get_all_studios()
     tags = stash_graphql.get_all_tags()
@@ -93,21 +93,30 @@ def fetch_scenes(
     stash_graphql: StashGraphQL,
 ) -> list[Scene]:
     logger = get_lily_logger()
+    stash_logger = get_stash_logger()
 
     if plugin_input_dict["args"].get("mode") == "all-scenes":
         logger.info("🫡 Processing all scenes")
+        stash_logger.info("Processing all scenes")
         scenes = stash_graphql.get_all_scenes()
+
+    elif plugin_input_dict["args"]["hookContext"].get("input") is None:
+        logger.info("🫡 No scenes to process")
+        stash_logger.info("No scenes to process")
+        scenes = []
 
     elif plugin_input_dict["args"]["hookContext"]["input"].get("ids") is not None:
         scene_ids = plugin_input_dict["args"]["hookContext"]["input"]["ids"]
 
         logger.info(f"🫡 Processing {len(scene_ids)} scene updates. Scene IDs: {scene_ids}")
+        stash_logger.info(f"Processing {len(scene_ids)} scene updates. Scene IDs: {scene_ids}")
         scenes = stash_graphql.find_scenes_by_id(scene_ids)
 
     elif plugin_input_dict["args"]["hookContext"]["input"].get("id") is not None:
         scene_id = plugin_input_dict["args"]["hookContext"]["input"]["id"]
 
         logger.info(f"🫡 Processing a single scene update. Scene ID: {scene_id}")
+        stash_logger.info(f"Processing a single scene update. Scene ID: {scene_id}")
         scenes = stash_graphql.find_scenes_by_id([scene_id])
 
     else:
