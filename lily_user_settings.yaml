@@ -8,10 +8,11 @@ global_rule_settings:
     path:
       max_path_length: 250
       duplicate_suffix_template: " (${num})"
+      avoid_duplicate_dir_nesting: true
 
 rename_rules:
   - name: "Rename organized videos"
-    template_file_dir: "${source_video_dir}"
+    template_file_dir: "${source_video_dir}/${rating}"
     template_file_name: "${studio} ${date} ${title} -- ${performers} (${resolution})"
 
     filters:

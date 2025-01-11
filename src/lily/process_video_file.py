@@ -5,6 +5,7 @@ from typing import Optional
 
 from lily.fields.generate_file_path import generate_file_dir, generate_file_name
 from lily.filters.passes_all_filters import passes_all_filters
+from lily.helpers.remove_duplicate_dir_nesting import remove_duplicate_dir_nesting
 from lily.helpers.validate_template import validate_template_identifiers
 from lily.lily_logging.lily_logger import get_lily_logger
 from lily.lily_logging.lily_logger_adapter import LilyLoggerAdapter
@@ -49,7 +50,11 @@ def process_video_file(stash_context: StashContext, user_settings: UserSettings)
 
         new_file_name = generate_file_name(template_file_name, stash_context, selected_rule.field_settings)
         new_file_dir = generate_file_dir(selected_rule.template_file_dir, stash_context, selected_rule.field_settings)
+
         new_file_path = Path(new_file_dir, f"{new_file_name}{file_ext}")
+
+        if selected_rule.post_templating_settings.path.avoid_duplicate_dir_nesting:
+            new_file_path = remove_duplicate_dir_nesting(new_file_path)
 
         new_file_path = generate_unique_file_path(
             source_file_path=stash_context.video_file.path,
