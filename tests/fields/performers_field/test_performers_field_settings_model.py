@@ -1,14 +1,15 @@
 from typing import Any
 
 import pytest
-from lily.fields.performers_field import (
+from pydantic import ValidationError
+from tests.testing_utils.generic import generic
+
+from lily.fields.field_performers import (
     PerformerFieldSettings,
     PerformerLimitExceededBehavior,
     PerformerSortKey,
 )
 from lily.models.stash_graphql_models.performer import GenderEnum
-from pydantic import ValidationError
-from tests.testing_utils.generic import generic
 
 
 class TestPerformersFieldSettingsModel:

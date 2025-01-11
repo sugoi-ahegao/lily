@@ -1,9 +1,10 @@
-from lily.filters.matches_studio import MatchesStudioFilterSettings
-from lily.filters.filter_settings import FilterSettings
-from lily.filters.passes_all_filters import passes_all_filters
 from tests.testing_model_creators.create_scene import create_scene
 from tests.testing_model_creators.create_stash_context import create_stash_context
 from tests.testing_model_creators.create_studio import create_studio
+
+from lily.filters.matches_studio import MatchesStudioFilterSettings
+from lily.filters.model_filter_settings import FilterSettings
+from lily.filters.passes_all_filters import passes_all_filters
 
 
 def test_scene_passes_organized_filter():

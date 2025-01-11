@@ -1,9 +1,10 @@
 from pathlib import Path
 
 import pytest
-from lily.process_video_file import generate_unique_file_path
 from tests.testing_model_creators.create_video_file import create_video_file
 from tests.testing_utils.patch_file_exists import patch_file_exists
+
+from lily.process_video_file import generate_unique_file_path
 
 
 def random_file_path() -> Path:
@@ -58,8 +59,8 @@ def test_error_is_raised_if_max_attempts_is_exceeded():
 def test_error_is_raised_if_duplicate_suffix_template_is_invalid():
     file_path = Path("/[VIDEOS]/My Scene Title.mp4")
 
-    with pytest.raises(AssertionError):
+    with pytest.raises(ValueError):
         generate_unique_file_path(random_file_path(), file_path, "no num template variable")
 
-    with pytest.raises(AssertionError):
+    with pytest.raises(ValueError):
         generate_unique_file_path(random_file_path(), file_path, "${num} ${random}")

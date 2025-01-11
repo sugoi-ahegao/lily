@@ -4,6 +4,7 @@ from typing import Optional
 
 from lily.models.core import BaseModelWithExactAttributes
 from lily.models.stash_graphql_models.performer import GenderEnum, Performer
+from lily.stash_context import StashContext
 
 
 class PerformerSortKey(str, Enum):
@@ -24,6 +25,10 @@ class PerformerFieldSettings(BaseModelWithExactAttributes):
     limit: Optional[int] = None
     limit_exceeded_behavior: PerformerLimitExceededBehavior = PerformerLimitExceededBehavior.KEEP
     exclude_genders: Optional[list[GenderEnum]] = None
+
+
+def performers_field(stash_context: StashContext, settings: PerformerFieldSettings) -> str:
+    return format_performers_field(stash_context.scene.performers, settings)
 
 
 def format_performers_field(performers: list[Performer], settings: PerformerFieldSettings) -> str:

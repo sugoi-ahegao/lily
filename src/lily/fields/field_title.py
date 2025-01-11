@@ -2,6 +2,7 @@ from enum import Enum
 from typing import Optional
 
 from lily.models.core import BaseModelWithExactAttributes
+from lily.stash_context import StashContext
 
 
 class Capitalization(str, Enum):
@@ -12,6 +13,10 @@ class Capitalization(str, Enum):
 
 class TitleFieldSettings(BaseModelWithExactAttributes):
     capitalization: Optional[Capitalization] = None
+
+
+def title_field(stash_context: StashContext, settings: TitleFieldSettings) -> str:
+    return format_title_field(stash_context.scene.title, settings)
 
 
 def format_title_field(title: Optional[str], settings: TitleFieldSettings) -> str:

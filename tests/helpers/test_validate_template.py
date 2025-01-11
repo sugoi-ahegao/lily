@@ -19,12 +19,12 @@ class TestValidateTemplateIdentifiers:
         template = "${title} ${date}"
         expected_identifiers = ["title"]
 
-        with pytest.raises(AssertionError):
+        with pytest.raises(ValueError):
             validate_template_identifiers(template, expected_identifiers)
 
     def test_missing_identifier(self):
         template = "${title}"
         expected_identifiers = ["title", "date"]
 
-        with pytest.raises(AssertionError):
+        with pytest.raises(ValueError):
             validate_template_identifiers(template, expected_identifiers)

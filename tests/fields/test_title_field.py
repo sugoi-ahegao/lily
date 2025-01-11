@@ -1,5 +1,6 @@
-from lily.fields.title_field import Capitalization, TitleFieldSettings, format_title_field
 from tests.testing_model_creators.create_scene import create_scene
+
+from lily.fields.field_title import Capitalization, TitleFieldSettings, format_title_field
 
 
 class TestTitleField:

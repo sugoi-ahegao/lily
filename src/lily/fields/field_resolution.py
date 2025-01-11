@@ -2,8 +2,13 @@ from types import NoneType
 from typing import Optional
 
 from lily.models.stash_graphql_models.video_file import VideoFile
+from lily.stash_context import StashContext
 
 ResolutionFieldSettings = NoneType
+
+
+def resolution_field(stash_context: StashContext, settings: ResolutionFieldSettings) -> str:
+    return format_resolution_field(stash_context.video_file, settings)
 
 
 def format_resolution_field(video_file: Optional[VideoFile], settings: ResolutionFieldSettings) -> str:

@@ -1,6 +1,7 @@
-from lily.fields.studio_field import StudioFieldSettings
-from lily.fields.studio_hierarchy_field import StudioHierarchyFieldSettings, format_studio_hierarchy_field
 from tests.testing_model_creators.create_studio import create_studio
+
+from lily.fields.field_studio import StudioFieldSettings
+from lily.fields.field_studio_hierarchy import StudioHierarchyFieldSettings, format_studio_hierarchy_field
 
 
 def test_studio_hierarchy_field_formatting():

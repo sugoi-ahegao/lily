@@ -1,8 +1,9 @@
-from lily.fields.studio_hierarchy_as_path_field import (
+from tests.testing_model_creators.create_studio import create_studio
+
+from lily.fields.field_studio_hierarchy_as_path import (
     StudioHierarchyAsPathFieldSettings,
     format_studio_hierarchy_as_path_field,
 )
-from tests.testing_model_creators.create_studio import create_studio
 
 
 class TestStudioHierarchyAsPathField:

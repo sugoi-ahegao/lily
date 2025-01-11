@@ -4,11 +4,16 @@ from typing import Optional
 from lily.helpers.validate_template import validate_template_identifiers
 from lily.models.core import BaseModelWithExactAttributes
 from lily.models.stash_graphql_models.studio import Studio
+from lily.stash_context import StashContext
 
 
 class StudioFieldSettings(BaseModelWithExactAttributes):
     template: str = "${studio}"
     squeeze_name: bool = False
+
+
+def studio_field(stash_context: StashContext, settings: StudioFieldSettings) -> str:
+    return format_studio_field(stash_context.scene.studio, settings)
 
 
 def format_studio_field(studio: Optional[Studio], settings: StudioFieldSettings) -> str:

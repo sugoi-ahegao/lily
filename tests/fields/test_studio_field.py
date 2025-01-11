@@ -1,6 +1,7 @@
 import pytest
-from lily.fields.studio_field import StudioFieldSettings, format_studio_field
 from tests.testing_model_creators.create_studio import create_studio
+
+from lily.fields.field_studio import StudioFieldSettings, format_studio_field
 
 
 class TestStudioField:
@@ -38,13 +39,13 @@ class TestStudioField:
     def test_raises_error_for_invalid_studio_template(self):
         studio = create_studio(name="Studio Name")
 
-        with pytest.raises(AssertionError):
+        with pytest.raises(ValueError):
             format_studio_field(studio, StudioFieldSettings(template=""))
 
-        with pytest.raises(AssertionError):
+        with pytest.raises(ValueError):
             format_studio_field(studio, StudioFieldSettings(template="${studio"))
 
-        with pytest.raises(AssertionError):
+        with pytest.raises(ValueError):
             format_studio_field(studio, StudioFieldSettings(template="${studio} ${another_field}"))
 
     def test_removes_spaces_when_squeezes_studio_name_is_true(self):

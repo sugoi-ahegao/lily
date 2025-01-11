@@ -1,6 +1,7 @@
 import pytest
-from lily.fields.resolution_field import ResolutionFieldSettings, format_resolution_field
 from tests.testing_model_creators.create_video_file import create_video_file
+
+from lily.fields.field_resolution import ResolutionFieldSettings, format_resolution_field
 
 
 class TestResolutionField:

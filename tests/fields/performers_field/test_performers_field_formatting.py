@@ -1,9 +1,10 @@
-from lily.fields.performers_field import (
+from tests.testing_model_creators.create_performer import create_performer
+
+from lily.fields.field_performers import (
     PerformerFieldSettings,
     format_performers_field,
 )
 from lily.models.stash_graphql_models.performer import GenderEnum
-from tests.testing_model_creators.create_performer import create_performer
 
 
 class TestPerformersFormatting:

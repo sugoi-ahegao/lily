@@ -1,8 +1,9 @@
-from lily.fields.performers_field import (
+from tests.testing_model_creators.create_performer import create_performer
+
+from lily.fields.field_performers import (
     PerformerSortKey,
     sort_performers,
 )
-from tests.testing_model_creators.create_performer import create_performer
 
 
 class TestPerformersSorting:

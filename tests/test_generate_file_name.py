@@ -1,7 +1,8 @@
-from lily.fields.performers_field import format_performers_field
-from lily.file_path_template import generate_file_name
-from lily.models.user_settings.field_settings import FieldSettings
+import pytest
 
+from lily.fields.field_performers import format_performers_field
+from lily.fields.generate_file_path import generate_file_name
+from lily.fields.model_field_settings import FieldSettings
 from tests.testing_model_creators.create_performer import create_performer
 from tests.testing_model_creators.create_scene import create_scene
 from tests.testing_model_creators.create_stash_context import create_stash_context
@@ -43,3 +44,10 @@ def test_generate_file_name_with_stash_context():
     actual = generate_file_name(template, create_stash_context(scene=scene), field_settings)
 
     assert expected == actual
+
+
+def test_generate_file_name_with_unknown_field():
+    template = "${unknown_field}"
+
+    with pytest.raises(ValueError):
+        generate_file_name(template, create_stash_context(), FieldSettings())

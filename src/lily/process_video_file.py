@@ -3,13 +3,13 @@ from pathlib import Path
 from string import Template
 from typing import Optional
 
-from lily.file_path_template import generate_file_dir, generate_file_name
+from lily.fields.generate_file_path import generate_file_dir, generate_file_name
+from lily.filters.passes_all_filters import passes_all_filters
 from lily.helpers.validate_template import validate_template_identifiers
 from lily.lily_logging.lily_logger import get_lily_logger
 from lily.lily_logging.lily_logger_adapter import LilyLoggerAdapter
 from lily.lily_results import LilyResults
 from lily.models.user_settings.user_settings import UserSettings
-from lily.filters.passes_all_filters import passes_all_filters
 from lily.stash_context import StashContext
 from lily.utils.path_utils import are_paths_equal, file_exists
 
