@@ -7,6 +7,7 @@ from lily.fields.field_performers import PerformerFieldSettings, performers_fiel
 from lily.fields.field_rating import RatingFieldSettings, rating_field
 from lily.fields.field_resolution import ResolutionFieldSettings, resolution_field
 from lily.fields.field_source_video_dir import SourceVideoDirFieldSettings, source_video_dir_field
+from lily.fields.field_stash_library import StashLibraryFieldSettings, stash_library_field
 from lily.fields.field_studio import StudioFieldSettings, studio_field
 from lily.fields.field_studio_hierarchy import StudioHierarchyFieldSettings, studio_hierarchy_field
 from lily.fields.field_studio_hierarchy_as_path import (
@@ -30,6 +31,7 @@ class FieldSettings(BaseModelWithExactAttributes):
     studio_hierarchy: StudioHierarchyFieldSettings = StudioHierarchyFieldSettings()
     title: TitleFieldSettings = TitleFieldSettings()
     watched: WatchedFieldSettings = WatchedFieldSettings()
+    stash_library: StashLibraryFieldSettings = StashLibraryFieldSettings()
 
     @model_validator(mode="after")
     def check_model_contains_settings_for_field_registry_file_dir(self) -> Self:
@@ -59,6 +61,7 @@ field_registry_file_dir: dict[str, Callable[[StashContext, Any], str]] = {
     "source_video_dir": source_video_dir_field,
     "studio": studio_field,
     "studio_hierarchy_as_path": studio_hierarchy_as_path_field,
+    "stash_library": stash_library_field,
 }
 
 field_registry_file_name: dict[str, Callable[[StashContext, Any], str]] = {

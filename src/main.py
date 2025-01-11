@@ -50,13 +50,14 @@ def main(args: PluginArgs):
 
     studios = stash_graphql.get_all_studios()
     tags = stash_graphql.get_all_tags()
+    stash_libraries = stash_graphql.get_stash_libraries()
 
     for scene in scenes:
         with LilyLoggerAdapter.with_scene_id(scene.id):
             for video_file in scene.files:
                 logger.debug(f"🎥 Processing '{video_file.path}'")
 
-                stash_ctx = StashContext(scene, video_file, studios, tags)
+                stash_ctx = StashContext(scene, video_file, studios, tags, stash_libraries)
                 dst_path = process_video_file(stash_ctx, user_settings)
 
                 if dst_path is None:

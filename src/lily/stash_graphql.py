@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import requests
+
 from lily.lily_logging.lily_logger import get_lily_logger
 from lily.lily_logging.stash_logger import StashLogger
 from lily.models.stash_graphql_models.performer import PERFORMER_FRAGMENT
@@ -158,6 +159,25 @@ class StashGraphQL:
         self.logger.info(f"Retrieved {tags_count} tag(s), took {execution_time:.2f} seconds")
 
         return [Tag.model_validate(tag_dict) for tag_dict in tags_dict]
+
+    def get_stash_libraries(self) -> list[Path]:
+        query = """
+            query libraryPaths {
+                configuration {
+                    general {
+                        stashes {
+                            path
+                        }
+                    }
+                }
+            }
+        """
+        response, execution_time = self.send_request(query)
+        library_paths_as_str = [stash["path"] for stash in response["configuration"]["general"]["stashes"]]
+
+        self.logger.info(f"Retrieved {len(library_paths_as_str)} stash library(ies), took {execution_time:.2f} seconds")
+
+        return [Path(path_str) for path_str in library_paths_as_str]
 
     def get_plugin_configuration(self) -> StashPluginConfig:
         query = """
