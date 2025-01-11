@@ -18,3 +18,11 @@ def test_remove_duplicate_dir_nesting_with_file():
     expected_path = Path("/Stash Libraries/80/file.mp4")
     actual_path = remove_duplicate_dir_nesting(duplicate_nested_path)
     assert are_paths_equal(actual_path, expected_path)
+
+
+def test_remove_duplicate_dir_nesting_with_file_and_dummy_nest():
+    duplicate_nested_path = Path("/Stash Libraries/80/80/file/file.mp4")
+
+    expected_path = Path("/Stash Libraries/80/file/file.mp4")
+    actual_path = remove_duplicate_dir_nesting(duplicate_nested_path)
+    assert are_paths_equal(actual_path, expected_path)
