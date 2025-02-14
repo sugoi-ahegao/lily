@@ -88,12 +88,12 @@ class TestPassesAllFilters:
 
         ctx = create_stash_context(scene=create_scene(stash_ids=stash_ids))
         assert (
-            passes_all_filters(ctx, FilterSettings(matches_stash_id=MatchesStashIDFilterSettings(value="not null")))
+            passes_all_filters(ctx, FilterSettings(matches_stash_id=MatchesStashIDFilterSettings(not_null=True)))
             is True
         )
 
         ctx = create_stash_context(scene=create_scene(stash_ids=[]))
         assert (
-            passes_all_filters(ctx, FilterSettings(matches_stash_id=MatchesStashIDFilterSettings(value="not null")))
+            passes_all_filters(ctx, FilterSettings(matches_stash_id=MatchesStashIDFilterSettings(not_null=True)))
             is False
         )
