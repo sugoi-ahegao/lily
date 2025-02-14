@@ -2,6 +2,7 @@ import operator
 from enum import Enum
 from typing import Optional
 
+from lily.fields.common import TextReplacementSetting, apply_text_replacements
 from lily.models.core import BaseModelWithExactAttributes
 from lily.models.stash_graphql_models.performer import GenderEnum, Performer
 from lily.stash_context import StashContext
@@ -21,14 +22,18 @@ class PerformerLimitExceededBehavior(str, Enum):
 
 class PerformerFieldSettings(BaseModelWithExactAttributes):
     separator: str = " "
-    sort_by: list["PerformerSortKey"] = [PerformerSortKey.ID]
+    sort_by: list[PerformerSortKey] = [PerformerSortKey.ID]
     limit: Optional[int] = None
     limit_exceeded_behavior: PerformerLimitExceededBehavior = PerformerLimitExceededBehavior.KEEP
     exclude_genders: Optional[list[GenderEnum]] = None
+    replacements: Optional[list[TextReplacementSetting]] = None
 
 
 def performers_field(stash_context: StashContext, settings: PerformerFieldSettings) -> str:
-    return format_performers_field(stash_context.scene.performers, settings)
+    performers_field_str = format_performers_field(stash_context.scene.performers, settings)
+    performers_field_str = apply_text_replacements(performers_field_str, settings.replacements)
+
+    return performers_field_str
 
 
 def format_performers_field(performers: list[Performer], settings: PerformerFieldSettings) -> str:

@@ -1,12 +1,13 @@
 from pathlib import Path
 
-from lily.process_video_file import process_video_file
-from lily.utils.path_utils import are_paths_equal
 from tests.testing_model_creators.create_performer import create_performer
 from tests.testing_model_creators.create_scene import create_scene
 from tests.testing_model_creators.create_stash_context import create_stash_context
 from tests.testing_model_creators.create_user_settings import create_user_settings
 from tests.testing_model_creators.create_video_file import create_video_file
+
+from lily.process_video_file import process_video_file
+from lily.utils.path_utils import are_paths_equal
 
 
 class TestFieldRemovalOrder:

@@ -1,6 +1,7 @@
 version: "0.2"
 ignorePaths:
   - .gitignore
+  - "**/cassettes/"
 dictionaryDefinitions:
   - name: pornstars
     path: ./.cspell/pornstar-dictionary.txt
@@ -23,6 +24,7 @@ words:
   - renamer
   - testpaths
   - unidecode
+  - vcrpy
 ignoreWords:
   - charliermarsh
 import: []

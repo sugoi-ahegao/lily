@@ -1,4 +1,0 @@
-version: 0.0.1
-rename_rules:
-  - template_file_dir: "/[VIDEOS]"
-    template_file_name: "${title}"

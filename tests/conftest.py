@@ -24,9 +24,9 @@ def patch_file_rename():
     with patch("main.rename_video_file") as mock_rename_file:
         yield mock_rename_file
 
-        assert (
-            mock_rename_file.call_count == 0
-        ), f"Test attempted to call rename video file {mock_rename_file.call_count} time(s)"
+        assert mock_rename_file.call_count == 0, (
+            f"Test attempted to call rename video file {mock_rename_file.call_count} time(s)"
+        )
 
 
 @pytest.fixture(autouse=True)

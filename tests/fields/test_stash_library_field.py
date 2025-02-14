@@ -6,14 +6,19 @@ from lily.fields.field_stash_library import StashLibraryFieldSettings, format_st
 from lily.utils.path_utils import are_paths_equal
 
 
-def test_stash_library_field():
-    video_file = create_video_file(file_path=Path("/stash-library/nested/folder/video.mp4"))
+class TestStashLibraryField:
+    def test_formats_stash_library_correctly(self):
+        video_file = create_video_file(file_path=Path("/stash-library/nested/folder/video.mp4"))
 
-    stash_libraries = [Path("/random/structure"), Path("/sources"), Path("/stash-library")]
+        stash_library_a = Path("/random/structure")
+        stash_library_b = Path("/sources")
+        stash_library_c = Path("/stash-library")
 
-    expected = stash_libraries[2]
-    actual = format_stash_library_field(
-        video_file=video_file, stash_libraries=stash_libraries, settings=StashLibraryFieldSettings()
-    )
+        stash_libraries = [stash_library_a, stash_library_b, stash_library_c]
 
-    assert are_paths_equal(expected, Path(actual))
+        expected = stash_library_c
+        actual = format_stash_library_field(
+            video_file=video_file, stash_libraries=stash_libraries, settings=StashLibraryFieldSettings()
+        )
+
+        assert are_paths_equal(expected, Path(actual))

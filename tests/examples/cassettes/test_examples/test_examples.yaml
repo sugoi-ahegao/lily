@@ -1,0 +1,397 @@
+interactions:
+- request:
+    body: '{"query": "\n            query GetAllScenes($filter: FindFilterType) {\n                findScenes(filter:
+      $filter) {\n                    count\n                    scenes {\n                        ...SceneFragment                        \n                    }\n                }\n            }\n        \nfragment
+      SceneFragment on Scene {\n    id\n    title\n    details\n    date\n    rating100\n    organized\n    o_counter\n    created_at\n    updated_at\n    stash_ids
+      {\n        stash_id\n        endpoint\n    }\n    files {\n        ...VideoFileFragment\n    }\n    studio
+      {\n        ...StudioFragment\n    }\n    tags {\n        ...PartialTagFragment\n    }\n    performers
+      {\n        ...PerformerFragment\n    }\n}\n\nfragment VideoFileFragment on VideoFile
+      {\n    id\n    path\n    basename\n    parent_folder_id\n    mod_time\n    size\n    width\n    height\n    duration\n    video_codec\n    audio_codec\n    frame_rate\n    bit_rate\n    created_at\n    updated_at\n}\n\nfragment
+      StudioFragment on Studio {\n    id\n    name\n    parent_studio {\n        ...PartialStudioFragment\n    }\n    child_studios
+      {\n        ...PartialStudioFragment\n    }\n    aliases\n    tags {\n        ...PartialTagFragment\n    }\n    rating100\n    favorite\n    created_at\n    updated_at\n}\n\nfragment
+      PartialStudioFragment on Studio {\n    id\n    name\n}\n\nfragment PerformerFragment
+      on Performer {\n    id\n    name\n    disambiguation\n    gender\n    birthdate\n    ethnicity\n    alias_list\n    favorite\n    tags
+      {\n        ...PartialTagFragment\n    }\n    rating100\n    created_at\n    updated_at\n}\n\nfragment
+      PartialTagFragment on Tag {\n    id\n    name\n}\n", "variables": {"filter":
+      {"direction": "DESC", "page": 1, "per_page": -1, "sort": "updated_at"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1778'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: http://localhost:9995/graphql
+  response:
+    body:
+      string: "{\"data\":{\"findScenes\":{\"count\":6,\"scenes\":[{\"id\":\"3\",\"title\":\"First
+        time to LP Juicy sweet ass Mandy Muse in a beautifull DP full of gapes and
+        balls deep action AA029\",\"details\":\"\",\"date\":\"2018-08-30\",\"rating100\":null,\"organized\":false,\"o_counter\":0,\"created_at\":\"2025-01-24T22:18:55-07:00\",\"updated_at\":\"2025-01-29T15:22:59-07:00\",\"stash_ids\":[],\"files\":[{\"id\":\"3\",\"path\":\"D:\\\\Stash
+        Lab\\\\library\\\\AnalVids.AmericanAnal.Mandy-Muse.AA029 [4k].mp4\",\"basename\":\"AnalVids.AmericanAnal.Mandy-Muse.AA029
+        [4k].mp4\",\"parent_folder_id\":\"2\",\"mod_time\":\"2023-09-12T17:46:49-06:00\",\"size\":10471258481,\"width\":3840,\"height\":2160,\"duration\":2603.4,\"video_codec\":\"h264\",\"audio_codec\":\"aac\",\"frame_rate\":29.97,\"bit_rate\":32177179,\"created_at\":\"2025-01-24T22:18:55-07:00\",\"updated_at\":\"2025-01-29T15:21:34-07:00\"}],\"studio\":{\"id\":\"6\",\"name\":\"American
+        Anal\",\"parent_studio\":{\"id\":\"5\",\"name\":\"Anal Vids\"},\"child_studios\":[],\"aliases\":[],\"tags\":[],\"rating100\":null,\"favorite\":false,\"created_at\":\"2025-01-24T22:19:02-07:00\",\"updated_at\":\"2025-01-24T22:19:02-07:00\"},\"tags\":[{\"id\":\"44\",\"name\":\"Anal
+        Sex\"},{\"id\":\"56\",\"name\":\"Ass to Mouth\"},{\"id\":\"6\",\"name\":\"Big
+        Ass\"},{\"id\":\"68\",\"name\":\"Brown Hair\"},{\"id\":\"48\",\"name\":\"Brown
+        Hair (Female)\"},{\"id\":\"43\",\"name\":\"Deepthroat\"},{\"id\":\"69\",\"name\":\"Double
+        Penetration (DP)\"},{\"id\":\"10\",\"name\":\"Facial\"},{\"id\":\"36\",\"name\":\"Interracial\"},{\"id\":\"70\",\"name\":\"Lingerie\"},{\"id\":\"71\",\"name\":\"Rough\"}],\"performers\":[{\"id\":\"5\",\"name\":\"Charlie
+        Mac\",\"disambiguation\":\"\",\"gender\":\"MALE\",\"birthdate\":\"1981-02-03\",\"ethnicity\":\"Black\",\"alias_list\":[\"Charlie
+        Macc\"],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-24T22:19:02-07:00\",\"updated_at\":\"2025-01-24T22:19:02-07:00\"},{\"id\":\"6\",\"name\":\"Isiah
+        Maxwell\",\"disambiguation\":\"\",\"gender\":\"MALE\",\"birthdate\":\"1989-03-28\",\"ethnicity\":\"Black\",\"alias_list\":[\"Isiah
+        James\"],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-24T22:19:03-07:00\",\"updated_at\":\"2025-01-24T22:19:03-07:00\"},{\"id\":\"2\",\"name\":\"Mandy
+        Muse\",\"disambiguation\":\"\",\"gender\":\"FEMALE\",\"birthdate\":\"1994-10-18\",\"ethnicity\":\"Latin\",\"alias_list\":[\"Xyla\"],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-24T17:41:37-07:00\",\"updated_at\":\"2025-01-24T17:41:37-07:00\"}]},{\"id\":\"1\",\"title\":\"Girls
+        Who Squat\",\"details\":\"Mandy is a fitspo babe putting in major hours at
+        the gym. She\u2019s just trying to grind it out and squat her way to the top
+        of the big butt game, when Ramon starts crowding her in the squat rack. If
+        it wasn\u2019t bad enough that he\u2019s trying to rush her sets, he starts
+        to mansplain proper technique. Mandy isn\u2019t having it and manages to silence
+        him with a little bit of logic and a lesson in focus. Unfortunately, the only
+        thing he really learned was that he wants her big, juicy butt and watching
+        her do deadlifts gives him a great idea.\",\"date\":\"2017-08-13\",\"rating100\":null,\"organized\":true,\"o_counter\":0,\"created_at\":\"2025-01-24T17:40:46-07:00\",\"updated_at\":\"2025-01-28T22:16:31-07:00\",\"stash_ids\":[{\"stash_id\":\"61fbd27b-4c83-4708-9861-03a29f628b43\",\"endpoint\":\"https://stashdb.org/graphql\"}],\"files\":[{\"id\":\"1\",\"path\":\"D:\\\\Stash
+        Lab\\\\library\\\\[Brazzers] [BigButtsLikeItBig] 2017-08-13 Girls Who Squat
+        -- Mandy Muse (1080p) - Copy.mp4\",\"basename\":\"[Brazzers] [BigButtsLikeItBig]
+        2017-08-13 Girls Who Squat -- Mandy Muse (1080p) - Copy.mp4\",\"parent_folder_id\":\"2\",\"mod_time\":\"2021-09-26T21:10:29-06:00\",\"size\":1422022554,\"width\":1920,\"height\":1080,\"duration\":1926.66,\"video_codec\":\"h264\",\"audio_codec\":\"aac\",\"frame_rate\":23.98,\"bit_rate\":5904624,\"created_at\":\"2025-01-24T17:40:46-07:00\",\"updated_at\":\"2025-01-29T15:19:31-07:00\"},{\"id\":\"7\",\"path\":\"D:\\\\Stash
+        Lab\\\\library\\\\[Brazzers] [BigButtsLikeItBig] 2017-08-13 Girls Who Squat
+        -- Mandy Muse (1080p).mp4\",\"basename\":\"[Brazzers] [BigButtsLikeItBig]
+        2017-08-13 Girls Who Squat -- Mandy Muse (1080p).mp4\",\"parent_folder_id\":\"2\",\"mod_time\":\"2021-09-26T21:10:29-06:00\",\"size\":1422022554,\"width\":1920,\"height\":1080,\"duration\":1926.66,\"video_codec\":\"h264\",\"audio_codec\":\"aac\",\"frame_rate\":23.98,\"bit_rate\":5904624,\"created_at\":\"2025-01-28T22:16:31-07:00\",\"updated_at\":\"2025-01-29T15:19:31-07:00\"}],\"studio\":{\"id\":\"2\",\"name\":\"Big
+        Butts Like It Big\",\"parent_studio\":{\"id\":\"1\",\"name\":\"Brazzers\"},\"child_studios\":[],\"aliases\":[],\"tags\":[],\"rating100\":null,\"favorite\":false,\"created_at\":\"2025-01-24T17:41:35-07:00\",\"updated_at\":\"2025-01-24T17:41:35-07:00\"},\"tags\":[{\"id\":\"55\",\"name\":\"Anal
+        Cowgirl\"},{\"id\":\"20\",\"name\":\"Anal Doggy Style\"},{\"id\":\"13\",\"name\":\"Anal
+        Reverse Cowgirl\"},{\"id\":\"44\",\"name\":\"Anal Sex\"},{\"id\":\"45\",\"name\":\"Ass
+        Worship\"},{\"id\":\"56\",\"name\":\"Ass to Mouth\"},{\"id\":\"38\",\"name\":\"Average
+        Body\"},{\"id\":\"41\",\"name\":\"Average Male Body\"},{\"id\":\"52\",\"name\":\"Ballerina\"},{\"id\":\"6\",\"name\":\"Big
+        Ass\"},{\"id\":\"51\",\"name\":\"Big Dick\"},{\"id\":\"33\",\"name\":\"Blowjob\"},{\"id\":\"26\",\"name\":\"Blowjob
+        - POV\"},{\"id\":\"59\",\"name\":\"Braids\"},{\"id\":\"48\",\"name\":\"Brown
+        Hair (Female)\"},{\"id\":\"54\",\"name\":\"Cowgirl\"},{\"id\":\"17\",\"name\":\"Cum
+        Swallowing\"},{\"id\":\"35\",\"name\":\"Cum in Mouth\"},{\"id\":\"43\",\"name\":\"Deepthroat\"},{\"id\":\"8\",\"name\":\"Doggy
+        Style\"},{\"id\":\"7\",\"name\":\"Face Fuck\"},{\"id\":\"10\",\"name\":\"Facial\"},{\"id\":\"40\",\"name\":\"Girls
+        Finishing the Job\"},{\"id\":\"50\",\"name\":\"Gym\"},{\"id\":\"15\",\"name\":\"Hair
+        Pulling\"},{\"id\":\"57\",\"name\":\"Hairless Pussy\"},{\"id\":\"53\",\"name\":\"Handjob\"},{\"id\":\"25\",\"name\":\"Handjob
+        to Completion\"},{\"id\":\"4\",\"name\":\"Innie Pussy\"},{\"id\":\"36\",\"name\":\"Interracial\"},{\"id\":\"19\",\"name\":\"Latin\"},{\"id\":\"12\",\"name\":\"Latina
+        Woman\"},{\"id\":\"29\",\"name\":\"Latino Man\"},{\"id\":\"30\",\"name\":\"Natural
+        Tits\"},{\"id\":\"39\",\"name\":\"No Condom\"},{\"id\":\"16\",\"name\":\"PAWG\"},{\"id\":\"2\",\"name\":\"Pale
+        Skin\"},{\"id\":\"42\",\"name\":\"Piercing\"},{\"id\":\"34\",\"name\":\"Pigtails\"},{\"id\":\"37\",\"name\":\"Reverse
+        Cowgirl\"},{\"id\":\"49\",\"name\":\"Reverse Cowgirl - POV\"},{\"id\":\"23\",\"name\":\"Short
+        Hair\"},{\"id\":\"18\",\"name\":\"Side Cowgirl\"},{\"id\":\"32\",\"name\":\"Side
+        Fuck\"},{\"id\":\"21\",\"name\":\"Slow Mo\"},{\"id\":\"11\",\"name\":\"Small
+        Tits\"},{\"id\":\"5\",\"name\":\"Sneakers\"},{\"id\":\"46\",\"name\":\"Spanking\"},{\"id\":\"22\",\"name\":\"Stand
+        and Carry\"},{\"id\":\"27\",\"name\":\"Standing Doggy Style\"},{\"id\":\"58\",\"name\":\"Standing
+        Sex\"},{\"id\":\"1\",\"name\":\"Stockings\"},{\"id\":\"28\",\"name\":\"Straight\"},{\"id\":\"31\",\"name\":\"Tattoos\"},{\"id\":\"24\",\"name\":\"Twosome
+        (Straight)\"},{\"id\":\"14\",\"name\":\"Uncircumcised\"},{\"id\":\"9\",\"name\":\"Vaginal
+        Sex\"},{\"id\":\"47\",\"name\":\"White\"},{\"id\":\"3\",\"name\":\"White Woman\"}],\"performers\":[{\"id\":\"1\",\"name\":\"Ramon
+        Nomar\",\"disambiguation\":\"\",\"gender\":\"MALE\",\"birthdate\":\"1974-01-08\",\"ethnicity\":\"Latin\",\"alias_list\":[\"Ramon\",\"Ramon
+        Enrique\",\"Ramon Enriqu\xE9\",\"Ramon Fernandez\",\"Ramon Gonzales\",\"Ramon
+        Guevara\",\"Ramon Guevarra\",\"Ramon Kiss\",\"Ramon Lee\",\"Ramon Navaro\",\"Ramon
+        Nomarr\",\"Ramon Novar\",\"Ramon Omar\",\"Ramon Perez\",\"Ramon Perrez\",\"Ramon
+        Sutra\",\"Ramon d'L Pojhon\",\"Ramone\",\"Ramone Fernandez\",\"Ram\xF3n Guebara\",\"Ram\xF3n
+        Guevara\",\"Raymon Nomar\"],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-24T17:41:36-07:00\",\"updated_at\":\"2025-01-24T17:41:36-07:00\"},{\"id\":\"2\",\"name\":\"Mandy
+        Muse\",\"disambiguation\":\"\",\"gender\":\"FEMALE\",\"birthdate\":\"1994-10-18\",\"ethnicity\":\"Latin\",\"alias_list\":[\"Xyla\"],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-24T17:41:37-07:00\",\"updated_at\":\"2025-01-24T17:41:37-07:00\"}]},{\"id\":\"6\",\"title\":\"A
+        Horny Christmas Carol\",\"details\":\"The Holidays aren't for everyone. In
+        fact, some people, like Peter Green, can become such a scrooge on Christmas.
+        When he visits his girlfriends house on Christmas Eve, he finds out that her
+        and her stepmom are obsessed with Christmas. They sit him down to watch their
+        favorite holiday movie, but when Peter falls as***p, the unthinkable happens.
+        He's awaken by The Ghost of Christmas, who's there to show Peter how much
+        better his life could be if he had the spirit of Christmas in his heart. The
+        fun, Christmas loving version of Peter is suprised with a threesome with his
+        girlfriend and her stepmom. Now he can really make it snow. He fucks them
+        in multiple positions and lets out a huge load from his candy cane all over
+        their faces.\",\"date\":\"2021-12-24\",\"rating100\":null,\"organized\":true,\"o_counter\":0,\"created_at\":\"2025-01-28T22:13:16-07:00\",\"updated_at\":\"2025-01-28T22:13:25-07:00\",\"stash_ids\":[{\"stash_id\":\"dd50156c-c6a5-4f6f-b3d0-5ba9bd4a8bf8\",\"endpoint\":\"https://stashdb.org/graphql\"}],\"files\":[{\"id\":\"6\",\"path\":\"D:\\\\Stash
+        Lab\\\\library\\\\[BangBros] [MomIsHorny] 2021-12-24 A Horny Christmas Carol
+        -- Carmela Clutch, Violet Gems (4k).mp4\",\"basename\":\"[BangBros] [MomIsHorny]
+        2021-12-24 A Horny Christmas Carol -- Carmela Clutch, Violet Gems (4k).mp4\",\"parent_folder_id\":\"2\",\"mod_time\":\"2021-12-27T01:54:44-07:00\",\"size\":6569679344,\"width\":3840,\"height\":2160,\"duration\":2621.62,\"video_codec\":\"h264\",\"audio_codec\":\"aac\",\"frame_rate\":29.97,\"bit_rate\":20047701,\"created_at\":\"2025-01-28T22:13:16-07:00\",\"updated_at\":\"2025-01-28T22:13:16-07:00\"}],\"studio\":{\"id\":\"9\",\"name\":\"Mom
+        Is Horny\",\"parent_studio\":{\"id\":\"7\",\"name\":\"BangBros\"},\"child_studios\":[],\"aliases\":[],\"tags\":[],\"rating100\":null,\"favorite\":false,\"created_at\":\"2025-01-28T22:13:22-07:00\",\"updated_at\":\"2025-01-28T22:13:22-07:00\"},\"tags\":[{\"id\":\"86\",\"name\":\"All
+        Vaginal\"},{\"id\":\"80\",\"name\":\"Amateur\"},{\"id\":\"6\",\"name\":\"Big
+        Ass\"},{\"id\":\"100\",\"name\":\"Big Tits\"},{\"id\":\"33\",\"name\":\"Blowjob\"},{\"id\":\"68\",\"name\":\"Brown
+        Hair\"},{\"id\":\"102\",\"name\":\"Christmas\"},{\"id\":\"54\",\"name\":\"Cowgirl\"},{\"id\":\"63\",\"name\":\"Cumshot\"},{\"id\":\"43\",\"name\":\"Deepthroat\"},{\"id\":\"8\",\"name\":\"Doggy
+        Style\"},{\"id\":\"10\",\"name\":\"Facial\"},{\"id\":\"57\",\"name\":\"Hairless
+        Pussy\"},{\"id\":\"99\",\"name\":\"Hardcore\"},{\"id\":\"19\",\"name\":\"Latin\"},{\"id\":\"95\",\"name\":\"MILF
+        (30+)\"},{\"id\":\"92\",\"name\":\"Missionary\"},{\"id\":\"30\",\"name\":\"Natural
+        Tits\"},{\"id\":\"101\",\"name\":\"Navel Piercing\"},{\"id\":\"96\",\"name\":\"Nipple
+        Piercing\"},{\"id\":\"39\",\"name\":\"No Condom\"},{\"id\":\"89\",\"name\":\"Open
+        Mouth Facial\"},{\"id\":\"37\",\"name\":\"Reverse Cowgirl\"},{\"id\":\"98\",\"name\":\"Riding\"},{\"id\":\"94\",\"name\":\"Tall
+        Socks\"},{\"id\":\"31\",\"name\":\"Tattoos\"},{\"id\":\"93\",\"name\":\"Threesome\"},{\"id\":\"97\",\"name\":\"Threesome
+        (BGG)\"},{\"id\":\"76\",\"name\":\"Trimmed Pussy\"},{\"id\":\"14\",\"name\":\"Uncircumcised\"},{\"id\":\"9\",\"name\":\"Vaginal
+        Sex\"}],\"performers\":[{\"id\":\"7\",\"name\":\"Peter Green\",\"disambiguation\":\"\",\"gender\":\"MALE\",\"birthdate\":\"1993-09-05\",\"ethnicity\":\"Mixed\",\"alias_list\":[],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-28T09:26:59-07:00\",\"updated_at\":\"2025-01-28T09:26:59-07:00\"},{\"id\":\"9\",\"name\":\"Violet
+        Gems\",\"disambiguation\":\"\",\"gender\":\"FEMALE\",\"birthdate\":\"2001-11-09\",\"ethnicity\":\"Latin\",\"alias_list\":[\"Violet1147\"],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-28T22:13:23-07:00\",\"updated_at\":\"2025-01-28T22:13:23-07:00\"},{\"id\":\"10\",\"name\":\"Carmela
+        Clutch\",\"disambiguation\":\"\",\"gender\":\"FEMALE\",\"birthdate\":\"1988-08-05\",\"ethnicity\":\"Latin\",\"alias_list\":[],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-28T22:13:24-07:00\",\"updated_at\":\"2025-01-28T22:13:24-07:00\"}]},{\"id\":\"5\",\"title\":\"\",\"details\":\"\",\"date\":null,\"rating100\":null,\"organized\":true,\"o_counter\":1,\"created_at\":\"2025-01-28T22:05:18-07:00\",\"updated_at\":\"2025-01-28T22:08:50-07:00\",\"stash_ids\":[],\"files\":[{\"id\":\"5\",\"path\":\"D:\\\\Stash
+        Lab\\\\library\\\\[OF-MiaMalkova] Fucking 2024 [1080p].mov\",\"basename\":\"[OF-MiaMalkova]
+        Fucking 2024 [1080p].mov\",\"parent_folder_id\":\"2\",\"mod_time\":\"2024-10-27T23:36:18-06:00\",\"size\":972232219,\"width\":608,\"height\":1080,\"duration\":744.62,\"video_codec\":\"hevc\",\"audio_codec\":\"aac\",\"frame_rate\":25,\"bit_rate\":10445475,\"created_at\":\"2025-01-28T22:05:17-07:00\",\"updated_at\":\"2025-01-29T15:19:31-07:00\"}],\"studio\":null,\"tags\":[],\"performers\":[]},{\"id\":\"2\",\"title\":\"Butt
+        Stuff 101\",\"details\":\"Anal porn is gross. You\u2019re a weird little gooner.
+        You\u2019ve never done anal with a real girl\u2026 Really? I think you\u2019re
+        lying.. Even if that\u2019s true there\u2019s no way I could do butt stuff.
+        You couldn\u2019t even fit a finger in my butt, there\u2019s no way\u2026\",\"date\":\"2024-05-25\",\"rating100\":null,\"organized\":true,\"o_counter\":0,\"created_at\":\"2025-01-24T20:37:16-07:00\",\"updated_at\":\"2025-01-28T16:47:37-07:00\",\"stash_ids\":[{\"stash_id\":\"597d7996-d12b-45d7-8c77-c69ddf8ce886\",\"endpoint\":\"https://stashdb.org/graphql\"}],\"files\":[{\"id\":\"2\",\"path\":\"D:\\\\Stash
+        Lab\\\\library\\\\[AlexAdamsMedia] [AnalTherapyXXX] 2024-05-25 Butt Stuff
+        101 -- Cami Strella (1080p).mp4\",\"basename\":\"[AlexAdamsMedia] [AnalTherapyXXX]
+        2024-05-25 Butt Stuff 101 -- Cami Strella (1080p).mp4\",\"parent_folder_id\":\"2\",\"mod_time\":\"2024-05-25T18:52:45-06:00\",\"size\":1606558638,\"width\":1920,\"height\":1080,\"duration\":2154.74,\"video_codec\":\"h264\",\"audio_codec\":\"aac\",\"frame_rate\":29.97,\"bit_rate\":5964736,\"created_at\":\"2025-01-24T20:37:15-07:00\",\"updated_at\":\"2025-01-29T15:19:31-07:00\"}],\"studio\":{\"id\":\"4\",\"name\":\"Anal
+        Therapy XXX\",\"parent_studio\":{\"id\":\"3\",\"name\":\"Alex Adams Media\"},\"child_studios\":[],\"aliases\":[],\"tags\":[],\"rating100\":null,\"favorite\":false,\"created_at\":\"2025-01-24T20:37:20-07:00\",\"updated_at\":\"2025-01-24T20:37:20-07:00\"},\"tags\":[{\"id\":\"44\",\"name\":\"Anal
+        Sex\"},{\"id\":\"33\",\"name\":\"Blowjob\"},{\"id\":\"63\",\"name\":\"Cumshot\"},{\"id\":\"65\",\"name\":\"Family
+        Roleplay\"},{\"id\":\"12\",\"name\":\"Latina Woman\"},{\"id\":\"67\",\"name\":\"Male
+        - POV\"},{\"id\":\"64\",\"name\":\"Rimming\"},{\"id\":\"60\",\"name\":\"Step
+        Brother\"},{\"id\":\"66\",\"name\":\"Step Siblings\"},{\"id\":\"61\",\"name\":\"Step
+        Sister\"},{\"id\":\"62\",\"name\":\"Taboo\"}],\"performers\":[{\"id\":\"3\",\"name\":\"Cami
+        Strella\",\"disambiguation\":\"\",\"gender\":\"FEMALE\",\"birthdate\":null,\"ethnicity\":\"Caucasian\",\"alias_list\":[\"Cami
+        Estrella\"],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-24T20:37:21-07:00\",\"updated_at\":\"2025-01-24T20:37:21-07:00\"},{\"id\":\"4\",\"name\":\"Alex
+        Adams\",\"disambiguation\":\"\",\"gender\":\"MALE\",\"birthdate\":\"1987-01-10\",\"ethnicity\":\"Caucasian\",\"alias_list\":[],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-24T20:37:22-07:00\",\"updated_at\":\"2025-01-24T20:37:22-07:00\"}]},{\"id\":\"4\",\"title\":\"Madison
+        Wants it Rough\",\"details\":\"Peter is just hanging out when all of a sudden
+        there is a knock at the door. He opens it and Madison Wilde is at the door.
+        She has heard of the house from friends, that everyone who comes by gets treated
+        well. She wants Peter to give it to her rough and take control. He asks her
+        if that is what she really wants. She re-affirms that she really wants him
+        to dominate her. He takes her in and gives her the fantasy she really wants.
+        Enjoy a scene filled with amazing sex and all types of positions leading to
+        cum full all over a pretty face.\",\"date\":\"2023-12-19\",\"rating100\":null,\"organized\":true,\"o_counter\":0,\"created_at\":\"2025-01-28T09:26:53-07:00\",\"updated_at\":\"2025-01-28T16:47:37-07:00\",\"stash_ids\":[{\"stash_id\":\"92fb21c6-569b-49a8-adb3-84b3861dfb7c\",\"endpoint\":\"https://stashdb.org/graphql\"}],\"files\":[{\"id\":\"4\",\"path\":\"D:\\\\Stash
+        Lab\\\\library\\\\[BangBros] [BangBrosClips] 2023-12-19 Madison Wants it Rough
+        -- Madison Wilde (4k).mp4\",\"basename\":\"[BangBros] [BangBrosClips] 2023-12-19
+        Madison Wants it Rough -- Madison Wilde (4k).mp4\",\"parent_folder_id\":\"2\",\"mod_time\":\"2024-03-19T16:34:45-06:00\",\"size\":5549979907,\"width\":3840,\"height\":2160,\"duration\":2214.43,\"video_codec\":\"h264\",\"audio_codec\":\"aac\",\"frame_rate\":30,\"bit_rate\":20050203,\"created_at\":\"2025-01-28T09:26:52-07:00\",\"updated_at\":\"2025-01-29T15:19:31-07:00\"}],\"studio\":{\"id\":\"8\",\"name\":\"BangBros
+        Clips\",\"parent_studio\":{\"id\":\"7\",\"name\":\"BangBros\"},\"child_studios\":[],\"aliases\":[],\"tags\":[],\"rating100\":null,\"favorite\":false,\"created_at\":\"2025-01-28T09:26:58-07:00\",\"updated_at\":\"2025-01-28T09:26:58-07:00\"},\"tags\":[{\"id\":\"88\",\"name\":\"4K
+        Available\"},{\"id\":\"86\",\"name\":\"All Vaginal\"},{\"id\":\"80\",\"name\":\"Amateur\"},{\"id\":\"72\",\"name\":\"American\"},{\"id\":\"51\",\"name\":\"Big
+        Dick\"},{\"id\":\"33\",\"name\":\"Blowjob\"},{\"id\":\"48\",\"name\":\"Brown
+        Hair (Female)\"},{\"id\":\"54\",\"name\":\"Cowgirl\"},{\"id\":\"63\",\"name\":\"Cumshot\"},{\"id\":\"43\",\"name\":\"Deepthroat\"},{\"id\":\"83\",\"name\":\"Denim
+        Shorts\"},{\"id\":\"8\",\"name\":\"Doggy Style\"},{\"id\":\"7\",\"name\":\"Face
+        Fuck\"},{\"id\":\"10\",\"name\":\"Facial\"},{\"id\":\"84\",\"name\":\"Fetish\"},{\"id\":\"90\",\"name\":\"Gagging\"},{\"id\":\"15\",\"name\":\"Hair
+        Pulling\"},{\"id\":\"82\",\"name\":\"Indoors\"},{\"id\":\"4\",\"name\":\"Innie
+        Pussy\"},{\"id\":\"36\",\"name\":\"Interracial\"},{\"id\":\"12\",\"name\":\"Latina
+        Woman\"},{\"id\":\"78\",\"name\":\"Living Room\"},{\"id\":\"92\",\"name\":\"Missionary\"},{\"id\":\"77\",\"name\":\"Mixed
+        Race Man\"},{\"id\":\"85\",\"name\":\"Muscular Man\"},{\"id\":\"30\",\"name\":\"Natural
+        Tits\"},{\"id\":\"39\",\"name\":\"No Condom\"},{\"id\":\"89\",\"name\":\"Open
+        Mouth Facial\"},{\"id\":\"81\",\"name\":\"Pussy Fingering\"},{\"id\":\"71\",\"name\":\"Rough\"},{\"id\":\"87\",\"name\":\"Short
+        Woman\"},{\"id\":\"32\",\"name\":\"Side Fuck\"},{\"id\":\"74\",\"name\":\"Small
+        Ass\"},{\"id\":\"11\",\"name\":\"Small Tits\"},{\"id\":\"46\",\"name\":\"Spanking\"},{\"id\":\"91\",\"name\":\"Tan
+        Lines\"},{\"id\":\"73\",\"name\":\"Tank Top\"},{\"id\":\"75\",\"name\":\"Thong\"},{\"id\":\"76\",\"name\":\"Trimmed
+        Pussy\"},{\"id\":\"24\",\"name\":\"Twosome (Straight)\"},{\"id\":\"14\",\"name\":\"Uncircumcised\"},{\"id\":\"9\",\"name\":\"Vaginal
+        Sex\"},{\"id\":\"79\",\"name\":\"Young Woman (22\u201330)\"}],\"performers\":[{\"id\":\"7\",\"name\":\"Peter
+        Green\",\"disambiguation\":\"\",\"gender\":\"MALE\",\"birthdate\":\"1993-09-05\",\"ethnicity\":\"Mixed\",\"alias_list\":[],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-28T09:26:59-07:00\",\"updated_at\":\"2025-01-28T09:26:59-07:00\"},{\"id\":\"8\",\"name\":\"Madison
+        Wilde\",\"disambiguation\":\"\",\"gender\":\"FEMALE\",\"birthdate\":\"2000-10-04\",\"ethnicity\":\"Latin\",\"alias_list\":[],\"favorite\":false,\"tags\":[],\"rating100\":null,\"created_at\":\"2025-01-28T09:27:00-07:00\",\"updated_at\":\"2025-01-28T09:27:00-07:00\"}]}]}}}"
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 29 Jan 2025 22:23:04 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"query": "\n            query GetAllStudios($filter: FindFilterType) {\n                findStudios(filter:
+      $filter) {\n                    count\n                    studios {\n                        ...StudioFragment\n                    }\n                }\n            }\n        \nfragment
+      StudioFragment on Studio {\n    id\n    name\n    parent_studio {\n        ...PartialStudioFragment\n    }\n    child_studios
+      {\n        ...PartialStudioFragment\n    }\n    aliases\n    tags {\n        ...PartialTagFragment\n    }\n    rating100\n    favorite\n    created_at\n    updated_at\n}\n\nfragment
+      PartialStudioFragment on Studio {\n    id\n    name\n}\n\nfragment PartialTagFragment
+      on Tag {\n    id\n    name\n}\n", "variables": {"filter": {"direction": "DESC",
+      "page": 1, "per_page": -1, "sort": "updated_at"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '822'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: http://localhost:9995/graphql
+  response:
+    body:
+      string: '{"data":{"findStudios":{"count":9,"studios":[{"id":"9","name":"Mom
+        Is Horny","parent_studio":{"id":"7","name":"BangBros"},"child_studios":[],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-28T22:13:22-07:00","updated_at":"2025-01-28T22:13:22-07:00"},{"id":"7","name":"BangBros","parent_studio":null,"child_studios":[{"id":"8","name":"BangBros
+        Clips"},{"id":"9","name":"Mom Is Horny"}],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-28T09:26:57-07:00","updated_at":"2025-01-28T22:13:21-07:00"},{"id":"8","name":"BangBros
+        Clips","parent_studio":{"id":"7","name":"BangBros"},"child_studios":[],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-28T09:26:58-07:00","updated_at":"2025-01-28T09:26:58-07:00"},{"id":"6","name":"American
+        Anal","parent_studio":{"id":"5","name":"Anal Vids"},"child_studios":[],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-24T22:19:02-07:00","updated_at":"2025-01-24T22:19:02-07:00"},{"id":"5","name":"Anal
+        Vids","parent_studio":null,"child_studios":[{"id":"6","name":"American Anal"}],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-24T22:19:02-07:00","updated_at":"2025-01-24T22:19:02-07:00"},{"id":"3","name":"Alex
+        Adams Media","parent_studio":null,"child_studios":[{"id":"4","name":"Anal
+        Therapy XXX"}],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-24T20:37:20-07:00","updated_at":"2025-01-24T20:37:20-07:00"},{"id":"4","name":"Anal
+        Therapy XXX","parent_studio":{"id":"3","name":"Alex Adams Media"},"child_studios":[],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-24T20:37:20-07:00","updated_at":"2025-01-24T20:37:20-07:00"},{"id":"2","name":"Big
+        Butts Like It Big","parent_studio":{"id":"1","name":"Brazzers"},"child_studios":[],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-24T17:41:35-07:00","updated_at":"2025-01-24T17:41:35-07:00"},{"id":"1","name":"Brazzers","parent_studio":null,"child_studios":[{"id":"2","name":"Big
+        Butts Like It Big"}],"aliases":[],"tags":[],"rating100":null,"favorite":false,"created_at":"2025-01-24T17:41:35-07:00","updated_at":"2025-01-24T17:41:35-07:00"}]}}}'
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '439'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 29 Jan 2025 22:23:04 GMT
+      Vary:
+      - Origin
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"query": "\n            query GetAllTags($filter: FindFilterType) {\n                findTags(filter:
+      $filter) {\n                    count\n                    tags {\n                        ...TagFragment\n                    }\n                }\n            }\n        \nfragment
+      TagFragment on Tag {\n    id\n    name\n    aliases\n    description\n    parents
+      {\n        ...PartialTagFragment\n    }\n    children {\n        ...PartialTagFragment\n    }\n    parent_count\n    child_count\n}\n\nfragment
+      PartialTagFragment on Tag {\n    id\n    name\n}\n", "variables": {"filter":
+      {"direction": "DESC", "page": 1, "per_page": -1, "sort": "updated_at"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '661'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: http://localhost:9995/graphql
+  response:
+    body:
+      string: "{\"data\":{\"findTags\":{\"count\":102,\"tags\":[{\"id\":\"100\",\"name\":\"Big
+        Tits\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"102\",\"name\":\"Christmas\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"99\",\"name\":\"Hardcore\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"95\",\"name\":\"MILF
+        (30+)\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"101\",\"name\":\"Navel
+        Piercing\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"96\",\"name\":\"Nipple
+        Piercing\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"98\",\"name\":\"Riding\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"94\",\"name\":\"Tall
+        Socks\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"93\",\"name\":\"Threesome\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"97\",\"name\":\"Threesome
+        (BGG)\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"88\",\"name\":\"4K
+        Available\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"86\",\"name\":\"All
+        Vaginal\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"80\",\"name\":\"Amateur\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"72\",\"name\":\"American\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"83\",\"name\":\"Denim
+        Shorts\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"84\",\"name\":\"Fetish\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"90\",\"name\":\"Gagging\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"82\",\"name\":\"Indoors\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"78\",\"name\":\"Living
+        Room\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"92\",\"name\":\"Missionary\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"77\",\"name\":\"Mixed
+        Race Man\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"85\",\"name\":\"Muscular
+        Man\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"89\",\"name\":\"Open
+        Mouth Facial\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"81\",\"name\":\"Pussy
+        Fingering\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"87\",\"name\":\"Short
+        Woman\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"74\",\"name\":\"Small
+        Ass\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"91\",\"name\":\"Tan
+        Lines\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"73\",\"name\":\"Tank
+        Top\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"75\",\"name\":\"Thong\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"76\",\"name\":\"Trimmed
+        Pussy\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"79\",\"name\":\"Young
+        Woman (22\u201330)\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"68\",\"name\":\"Brown
+        Hair\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"69\",\"name\":\"Double
+        Penetration (DP)\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"70\",\"name\":\"Lingerie\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"71\",\"name\":\"Rough\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"63\",\"name\":\"Cumshot\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"65\",\"name\":\"Family
+        Roleplay\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"67\",\"name\":\"Male
+        - POV\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"64\",\"name\":\"Rimming\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"60\",\"name\":\"Step
+        Brother\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"66\",\"name\":\"Step
+        Siblings\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"61\",\"name\":\"Step
+        Sister\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"62\",\"name\":\"Taboo\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"55\",\"name\":\"Anal
+        Cowgirl\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"20\",\"name\":\"Anal
+        Doggy Style\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"13\",\"name\":\"Anal
+        Reverse Cowgirl\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"44\",\"name\":\"Anal
+        Sex\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"56\",\"name\":\"Ass
+        to Mouth\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"45\",\"name\":\"Ass
+        Worship\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"38\",\"name\":\"Average
+        Body\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"41\",\"name\":\"Average
+        Male Body\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"52\",\"name\":\"Ballerina\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"6\",\"name\":\"Big
+        Ass\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"51\",\"name\":\"Big
+        Dick\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"33\",\"name\":\"Blowjob\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"26\",\"name\":\"Blowjob
+        - POV\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"59\",\"name\":\"Braids\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"48\",\"name\":\"Brown
+        Hair (Female)\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"54\",\"name\":\"Cowgirl\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"35\",\"name\":\"Cum
+        in Mouth\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"17\",\"name\":\"Cum
+        Swallowing\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"43\",\"name\":\"Deepthroat\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"8\",\"name\":\"Doggy
+        Style\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"7\",\"name\":\"Face
+        Fuck\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"10\",\"name\":\"Facial\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"40\",\"name\":\"Girls
+        Finishing the Job\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"50\",\"name\":\"Gym\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"15\",\"name\":\"Hair
+        Pulling\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"57\",\"name\":\"Hairless
+        Pussy\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"53\",\"name\":\"Handjob\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"25\",\"name\":\"Handjob
+        to Completion\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"4\",\"name\":\"Innie
+        Pussy\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"36\",\"name\":\"Interracial\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"19\",\"name\":\"Latin\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"12\",\"name\":\"Latina
+        Woman\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"29\",\"name\":\"Latino
+        Man\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"30\",\"name\":\"Natural
+        Tits\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"39\",\"name\":\"No
+        Condom\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"2\",\"name\":\"Pale
+        Skin\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"16\",\"name\":\"PAWG\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"42\",\"name\":\"Piercing\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"34\",\"name\":\"Pigtails\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"37\",\"name\":\"Reverse
+        Cowgirl\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"49\",\"name\":\"Reverse
+        Cowgirl - POV\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"23\",\"name\":\"Short
+        Hair\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"18\",\"name\":\"Side
+        Cowgirl\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"32\",\"name\":\"Side
+        Fuck\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"21\",\"name\":\"Slow
+        Mo\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"11\",\"name\":\"Small
+        Tits\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"5\",\"name\":\"Sneakers\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"46\",\"name\":\"Spanking\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"22\",\"name\":\"Stand
+        and Carry\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"27\",\"name\":\"Standing
+        Doggy Style\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"58\",\"name\":\"Standing
+        Sex\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"1\",\"name\":\"Stockings\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"28\",\"name\":\"Straight\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"31\",\"name\":\"Tattoos\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"24\",\"name\":\"Twosome
+        (Straight)\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"14\",\"name\":\"Uncircumcised\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"9\",\"name\":\"Vaginal
+        Sex\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"47\",\"name\":\"White\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0},{\"id\":\"3\",\"name\":\"White
+        Woman\",\"aliases\":[],\"description\":\"\",\"parents\":[],\"children\":[],\"parent_count\":0,\"child_count\":0}]}}}"
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1232'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 29 Jan 2025 22:23:04 GMT
+      Vary:
+      - Origin
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"query": "\n            query libraryPaths {\n                configuration
+      {\n                    general {\n                        stashes {\n                            path\n                        }\n                    }\n                }\n            }\n        ",
+      "variables": null}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '293'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: http://localhost:9995/graphql
+  response:
+    body:
+      string: '{"data":{"configuration":{"general":{"stashes":[{"path":"D:\\Stash
+        Lab\\library"}]}}}}'
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 29 Jan 2025 22:23:04 GMT
+      Vary:
+      - Origin
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 200
+      message: OK
+version: 1

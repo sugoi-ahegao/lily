@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def remove_duplicate_dir_nesting(path: Path):
+def remove_consecutive_nested_dirs(path: Path):
     path_parts = path.parts
 
     unique_path_parts: list[str] = []

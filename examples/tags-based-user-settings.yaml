@@ -1,0 +1,26 @@
+version: 0.0.1
+rename_rules:
+- name: "Rename videos based on tags"
+  template_file_dir: "${source_video_dir}"
+  template_file_name: "${studio} ${date} ${title} -- ${performers} (${resolution})"
+
+  field_settings:
+    tags:
+      separator: " "
+      limit: 2
+      whitelist:
+        - name: "tag1"
+        - id: 2
+      # blacklist:
+      #   - name: "tag3"
+      #   - id: 5
+        
+  filters:
+    matches_tag:
+      name: "asc"
+      include_sub_tags: true
+    matches_any_tag:
+      - name: "60 fps"
+        include_sub_tags: true
+      - name: Anal
+      - name: "JAV"

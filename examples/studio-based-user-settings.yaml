@@ -1,0 +1,40 @@
+version: 0.0.1
+
+rename_rules:
+  - name: "Rename videos from Brazzers"
+    template_file_dir: "${stash_library}/Brazzers"
+    template_file_name: "${studio} ${date} ${title} - ${performers}"
+
+    field_settings:
+      studio:
+        template: "${studio}" # Default setting
+        squeeze_name: false # Default setting
+
+    filter:
+      matches_studio:
+        name: "Brazzers"
+        # Include sub studios like "Big Butts Like It Big", "Brazzers Exxtra", "Big Tits at School", etc
+        include_sub_studios: true
+
+  - name: "Rename videos from anal studios"
+    template_file_dir: "${stash_library}/Anal"
+    template_file_name: "${studio_hierarchy} ${date} ${title} - ${performers}"
+
+    field_settings:
+      studio_hierarchy:
+        separator: " " # Default setting
+        studio:
+          template: "[${studio}]" # Wrap every studio name in "[]"
+          squeeze_name: true # Squeeze studio name. eg. "Anal Therapy XXX" -> "AnalTherapyXXX"
+
+    filter:
+      matches_any_studio:
+        - name: "Anal Vids" 
+          include_sub_studios: true
+
+        - name: "Anal Therapy XXX" 
+          include_sub_studios: false # Default setting
+
+          # Either "name" or "id" of studio is required (but not both)
+        - id: 179 # Studio ID for "Analized" 
+          # name: "Analized" 

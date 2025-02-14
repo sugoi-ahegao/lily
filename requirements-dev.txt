@@ -1,5 +1,6 @@
 mimesis==18.0.0
-pre-commit==4.0.1
-pytest==8.3.3
+pre-commit==4.1.0
+pytest==8.3.4
+pytest-recording==0.13.2
 pytest_mock==3.14.0
-ruff==0.7.3
+ruff==0.9.3

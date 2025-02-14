@@ -1,6 +1,7 @@
 from string import Template
 from typing import Optional
 
+from lily.fields.common import TextReplacementSetting, apply_text_replacements
 from lily.helpers.validate_template import validate_template_identifiers
 from lily.models.core import BaseModelWithExactAttributes
 from lily.models.stash_graphql_models.studio import Studio
@@ -10,10 +11,14 @@ from lily.stash_context import StashContext
 class StudioFieldSettings(BaseModelWithExactAttributes):
     template: str = "${studio}"
     squeeze_name: bool = False
+    replacements: Optional[list[TextReplacementSetting]] = None
 
 
 def studio_field(stash_context: StashContext, settings: StudioFieldSettings) -> str:
-    return format_studio_field(stash_context.scene.studio, settings)
+    studio_field_str = format_studio_field(stash_context.scene.studio, settings)
+    studio_field_str = apply_text_replacements(studio_field_str, settings.replacements)
+
+    return studio_field_str
 
 
 def format_studio_field(studio: Optional[Studio], settings: StudioFieldSettings) -> str:

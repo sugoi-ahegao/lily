@@ -2,12 +2,20 @@ from lily.models.core import BaseModelWithExactAttributes, NonEmptyString
 
 
 class PartialTag(BaseModelWithExactAttributes):
-    id: NonEmptyString
+    id: int
     name: NonEmptyString
+
+    @staticmethod
+    def from_tag(tag: "Tag") -> "PartialTag":
+        return PartialTag.model_validate(tag, from_attributes=True)
+
+    @staticmethod
+    def from_tags(tags: list["Tag"]) -> list["PartialTag"]:
+        return [PartialTag.from_tag(tag) for tag in tags]
 
 
 class Tag(BaseModelWithExactAttributes):
-    id: NonEmptyString
+    id: int
     name: NonEmptyString
     aliases: list[str]
     description: str

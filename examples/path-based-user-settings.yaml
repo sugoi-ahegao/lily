@@ -1,0 +1,25 @@
+version: "0.0.1"
+
+rename_rules:
+  - name: "Rename and move videos to a 'Renamed' folder"
+    template_file_dir: "${stash_library}/Organized/Renamed"
+    template_file_name: "${studio} ${date} ${title} -- ${performers}"
+
+    # Only rename videos that are "Organized", linked to a stash id, and in an "Unorganized" folder
+    filters:
+      matches_organized: 
+        value: true
+      matches_stash_id: 
+        value: not null
+      matches_any_source_dir:
+        - "D:/Stash Lab/library"
+
+    post_templating_settings:
+      path:
+        max_path_length: 250 # Default setting
+        duplicate_suffix_template: "(${num})" # Default setting
+        prevent_consecutive_nested_dirs: false # Default setting
+
+  - name: "Move organized videos to the 'Organized' folder"
+    template_file_dir: "${stash_library}/Organized"
+    template_file_name: "${source_video_file_name}" # Keeps the same file name as the original video

@@ -1,0 +1,33 @@
+renames:
+  # --- Scene 1: Renamed
+  # -> Rule 1:
+  # > Scene is organized
+  # > Scene has a stash id
+  # > Scene is in "D:/Stash Lab/library/Favorites"
+  1: "D:/Stash Lab/library/Organized/Renamed/Big Butts Like It Big 2017-08-13 Girls Who Squat -- Ramon Nomar Mandy Muse.mp4"
+
+  # --- Scene 2: Renamed
+  # -> Rule 1)
+  # > Scene is organized
+  # > Scene has a stash id
+  # > Scene is in "D:/Stash Lab/library/Favorites"
+  2: "D:/Stash Lab/library/Organized/Renamed/Anal Therapy XXX 2024-05-25 Butt Stuff 101 -- Cami Strella Alex Adams.mp4"
+
+  # --- Scene 3: Renamed ---
+  # --> Rule 1: Not Applied
+  # > Scene is not organized (does not pass matches_organized filter)
+  3: "D:/Stash Lab/library/Organized/AnalVids.AmericanAnal.Mandy-Muse.AA029 [4k].mp4"
+
+  # --- Scene 4: Renamed
+  # > Scene is organized
+  # > Scene has a stash id
+  # > Scene is in "D:/Stash Lab/library/Favorites"
+  4: "D:/Stash Lab/library/Organized/Renamed/BangBros Clips 2023-12-19 Madison Wants it Rough -- Peter Green Madison Wilde.mp4"
+
+  # --- Scene 5: Not Renamed
+  # > Scene does not have a stash id (does not pass matches_stash_id filter)
+  5: null
+
+  # --- Scene 6: Not Renamed
+  # > Scene is not in "D:/Stash Lab/library/Favorites" (does not pass matches_any_source_dir filter)
+  6: null

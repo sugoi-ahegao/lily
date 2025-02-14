@@ -8,7 +8,6 @@ def create_studio_hierarchy(studio: Studio, all_studios: list[Studio]) -> list[S
     """
     Create a studio hierarchy with the input studio as the bottom of the hierarchy (list)
     """
-    pass
 
     def find_parent_studio(studio: Studio) -> Optional[Studio]:
         if studio.parent_studio is None:
@@ -25,7 +24,7 @@ def create_studio_hierarchy(studio: Studio, all_studios: list[Studio]) -> list[S
     curr_studio = studio
     while curr_studio := find_parent_studio(curr_studio):
         if curr_studio.id in explored_studio_ids:
-            raise RuntimeError("Studio Cycle Detected")
+            raise RuntimeError(f"Studio Cycle Detected. Already explored Studio ID: {curr_studio.id}")
 
         explored_studio_ids.add(curr_studio.id)
         studio_hierarchy.appendleft(curr_studio)

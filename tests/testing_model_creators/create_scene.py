@@ -1,10 +1,12 @@
 from typing import Optional
 
+from tests.testing_utils.generate_random_unique_id import generate_random_unique_id
+from tests.testing_utils.generic import generic
+
 from lily.models.stash_graphql_models.performer import Performer
 from lily.models.stash_graphql_models.scene import Scene
 from lily.models.stash_graphql_models.studio import Studio
-from tests.testing_utils.generate_random_unique_id import generate_random_unique_id
-from tests.testing_utils.generic import generic
+from lily.models.stash_graphql_models.tag import PartialTag
 
 
 def create_scene(
@@ -13,6 +15,7 @@ def create_scene(
     organized: Optional[bool] = None,
     studio: Optional[Studio] = None,
     performers: Optional[list[Performer]] = None,
+    tags: Optional[list[PartialTag]] = None,
     rating100: Optional[int] = None,
     o_counter: Optional[int] = None,
     stash_ids: Optional[list[dict[str, str]]] = None,
@@ -22,6 +25,9 @@ def create_scene(
 
     if stash_ids is None:
         stash_ids = []
+
+    if tags is None:
+        tags = []
 
     return Scene.model_validate(
         {
@@ -37,7 +43,7 @@ def create_scene(
             "stash_ids": stash_ids,
             "files": [],
             "studio": studio,
-            "tags": [],
+            "tags": tags,
             "performers": performers or [],
         }
     )

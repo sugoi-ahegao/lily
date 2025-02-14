@@ -1,0 +1,46 @@
+version: 0.0.1
+
+rename_rules:
+  - name: "Rename highest rated videos"
+    template_file_dir: "${stash_library}/Rated/Best"
+    template_file_name: "${studio} ${date} ${title} -- (${rating})"
+
+    filters:
+      matches_organized:
+          value: true
+      matches_rating:
+          constraint: "== 100"
+
+  - name: "Rename highly rated videos"
+    template_file_dir: "${stash_library}/Rated/High"
+    template_file_name: "${studio} ${date} ${title} -- (${rating})"
+
+    filters:
+      matches_organized:
+        value: true 
+      matches_rating:
+        constraint: ">= 80, < 100"
+
+  - name: "Rename low rated videos"
+    template_file_dir: "${stash_library}/Rated/Low"
+    template_file_name: "${studio} ${date} ${title} -- (${rating})"
+
+    field_settings:
+      rating:
+        format: "score-${rating}"
+
+    filters:
+      matches_organized:
+        value: true
+      matches_rating:
+        value: "not none"
+
+  - name: "Rename unrated videos"
+    template_file_dir: "${stash_library}/Organized"
+    template_file_name: "${studio} ${date} ${title}"
+
+    filters:
+      matches_organized:
+        value: true
+      matches_rating:
+        value: "none"
