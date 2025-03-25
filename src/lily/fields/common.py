@@ -1,5 +1,6 @@
+import operator
 import re
-from typing import Optional
+from typing import Any, Optional
 
 from lily.models.core import BaseModelWithExactAttributes
 
@@ -25,3 +26,28 @@ def apply_text_replacement(text: str, find_pattern: str, replace_with: str, use_
         return re.sub(find_pattern, replace_with, text)
 
     return text.replace(find_pattern, replace_with)
+
+
+OPERATORS: dict[str, Any] = {
+    ">=": operator.ge,
+    "<=": operator.le,
+    ">": operator.gt,
+    "<": operator.lt,
+    "==": operator.eq,
+    "!=": operator.ne,
+}
+
+
+def satisfies_all_constraints(value: float, constraints_as_str: str) -> bool:
+    return all([satisfies_constraint(value, constraint_str) for constraint_str in constraints_as_str.split(",")])
+
+
+def satisfies_constraint(value: float, constraint_str: str) -> bool:
+    match = re.match(r"(>=|<=|>|<|==|!=)\s*(-?\d+(\.\d+)?)", constraint_str.strip())
+
+    if not match:
+        raise ValueError(f"Invalid constraint format: {constraint_str}")
+
+    op, num = match.group(1), float(match.group(2))
+
+    return OPERATORS[op](value, num)

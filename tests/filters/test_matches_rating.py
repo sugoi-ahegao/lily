@@ -1,6 +1,6 @@
 import pytest
 
-from lily.filters.matches_rating import satisfies_all_constraints, satisfies_constraint
+from lily.fields.common import satisfies_all_constraints, satisfies_constraint
 
 
 class TestSatisfiesConstraints:
