@@ -20,13 +20,13 @@ class TitleFieldSettings(BaseModelWithExactAttributes):
 
 
 def title_field(stash_context: StashContext, settings: TitleFieldSettings) -> str:
+    scene_title = stash_context.scene.title
+
     if settings.fallback_to_source_video_file_name:
-        scene_title = stash_context.scene.title
-
         if scene_title is None or scene_title.strip() == "":
-            return stash_context.video_file.path.stem
+            scene_title = stash_context.video_file.path.stem
 
-    title_field_str = format_title_field(stash_context.scene.title, settings)
+    title_field_str = format_title_field(scene_title, settings)
     title_field_str = apply_text_replacements(title_field_str, settings.replacements)
 
     return title_field_str

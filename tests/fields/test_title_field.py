@@ -99,13 +99,13 @@ class TestTitleFieldFallback:
         actual = title_field(stash_context, TitleFieldSettings(fallback_to_source_video_file_name=True))
         assert expected == actual
 
-    def test_other_title_field_settings_are_not_applied(self):
+    def test_other_title_field_settings_are_applied(self):
         scene = create_scene(title=None)
         video_file = create_video_file(file_path=Path("/path/to/video_file_name.mp4"))
 
         stash_context = create_stash_context(scene=scene, video_file=video_file)
 
-        expected = "video_file_name"
+        expected = "_FILE_NAME"
         actual = title_field(
             stash_context,
             TitleFieldSettings(
@@ -115,4 +115,5 @@ class TestTitleFieldFallback:
                 fallback_to_source_video_file_name=True,
             ),
         )
+
         assert expected == actual
