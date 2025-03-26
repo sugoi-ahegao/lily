@@ -7,6 +7,7 @@ from lily.filters.matches_any_studio import MatchesAnyStudioFilterSettings, matc
 from lily.filters.matches_any_tag import MatchesAnyTagFilterSettings, matches_any_tag
 from lily.filters.matches_o_counter import MatchesOCounterFilterSettings, matches_o_counter
 from lily.filters.matches_organized import MatchesOrganizedFilterSettings, matches_organized
+from lily.filters.matches_rating import MatchesRatingFilterSettings, matches_rating
 from lily.filters.matches_source_dir import MatchesSourceDirFilterSettings, matches_source_dir
 from lily.filters.matches_stash_id import MatchesStashIDFilterSettings, matches_stash_id
 from lily.filters.matches_studio import MatchesStudioFilterSettings, matches_studio
@@ -25,6 +26,7 @@ class FilterSettings(BaseModelWithExactAttributes):
     matches_tag: Optional[MatchesTagFilterSettings] = None
     matches_any_tag: Optional[MatchesAnyTagFilterSettings] = None
     matches_o_counter: Optional[MatchesOCounterFilterSettings] = None
+    matches_rating: Optional[MatchesRatingFilterSettings] = None
 
     @model_validator(mode="after")
     def check_model_contains_settings_for_entire_filter_registry(self) -> Self:
@@ -57,4 +59,5 @@ filter_registry: dict[str, Callable[[StashContext, Any], bool]] = {
     "matches_tag": matches_tag,
     "matches_any_tag": matches_any_tag,
     "matches_o_counter": matches_o_counter,
+    "matches_rating": matches_rating,
 }
